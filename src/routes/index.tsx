@@ -19,6 +19,9 @@ import {
   ChevronRight,
   CheckCircle2,
   Quote,
+  BookOpen,
+  Send,
+  TrendingUp,
 } from "lucide-react";
 import { useReveal } from "../hooks/use-reveal";
 
