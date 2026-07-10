@@ -487,6 +487,135 @@ function SectionHeading({
 }
 
 /* ============================================================
+ *  TIMELINE INFOGRAPHIC – 6 NHIỆM VỤ
+ * ============================================================ */
+
+function HexIcon({
+  Icon,
+  color,
+}: {
+  Icon: typeof FolderTree;
+  color: string;
+}) {
+  const hex = "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)";
+  return (
+    <div className="relative size-[76px] shrink-0">
+      {/* viền chấm bên ngoài */}
+      <div
+        className="absolute -inset-2 rounded-full border border-dashed opacity-40"
+        style={{ borderColor: color, clipPath: hex }}
+      />
+      {/* khung gradient */}
+      <div
+        className="grid size-full place-items-center p-[2px] shadow-[var(--shadow-soft)]"
+        style={{
+          clipPath: hex,
+          background: `linear-gradient(135deg, ${color}, ${color}55)`,
+        }}
+      >
+        <div
+          className="grid size-full place-items-center bg-card"
+          style={{ clipPath: hex }}
+        >
+          <Icon className="size-7" style={{ color }} strokeWidth={2} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TimelineTask({
+  task,
+  num,
+  side,
+}: {
+  task: (typeof TASKS)[number];
+  num: number;
+  side: "left" | "right";
+}) {
+  const isLeft = side === "left";
+  const label = String(num).padStart(2, "0");
+  return (
+    <div
+      className={`reveal flex items-start gap-4 sm:gap-6 ${
+        isLeft ? "sm:flex-row-reverse sm:text-right" : "sm:flex-row"
+      }`}
+    >
+      {/* icon lục giác + mũi tên hướng vào trục */}
+      <div className="relative hidden sm:block">
+        <HexIcon Icon={task.icon} color={task.color} />
+      </div>
+
+      {/* khối nội dung */}
+      <div className={`flex-1 ${isLeft ? "sm:items-end" : ""}`}>
+        <div
+          className={`flex items-center gap-3 ${
+            isLeft ? "sm:flex-row-reverse" : ""
+          }`}
+        >
+          <span
+            className="font-display text-4xl font-extrabold leading-none tracking-tight"
+            style={{ color: task.color }}
+          >
+            {label}
+          </span>
+          <span
+            className="h-9 w-px"
+            style={{ backgroundColor: task.color }}
+            aria-hidden
+          />
+          <span className="sm:hidden">
+            <HexIcon Icon={task.icon} color={task.color} />
+          </span>
+        </div>
+
+        <h3 className="mt-3 font-display text-xl font-bold leading-snug text-foreground">
+          {task.titleLines.map((l) => (
+            <span key={l} className="block">
+              {l}
+            </span>
+          ))}
+        </h3>
+        <p
+          className={`mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground ${
+            isLeft ? "sm:ml-auto" : ""
+          }`}
+        >
+          {task.desc}
+        </p>
+
+        <div className={`mt-4 max-w-xs ${isLeft ? "sm:ml-auto" : ""}`}>
+          <div
+            className={`mb-1.5 flex items-center justify-between text-xs font-medium text-muted-foreground ${
+              isLeft ? "sm:flex-row-reverse" : ""
+            }`}
+          >
+            <span>Mức độ hoàn thành</span>
+            <span className="font-bold" style={{ color: task.color }}>
+              {task.progress}%
+            </span>
+          </div>
+          <div className="relative h-1.5 w-full rounded-full bg-secondary">
+            <div
+              className="h-full rounded-full"
+              style={{
+                width: `${task.progress}%`,
+                backgroundColor: task.color,
+              }}
+            />
+            <span
+              className="absolute top-1/2 size-3 -translate-y-1/2 rounded-full border-2 bg-card"
+              style={{ right: 0, borderColor: task.color }}
+              aria-hidden
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
  *  TRANG CHÍNH
  * ============================================================ */
 
