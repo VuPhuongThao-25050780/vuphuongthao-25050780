@@ -46,6 +46,8 @@ const TASKS = [
     desc: "Tổ chức dữ liệu học tập khoa học, đặt tên tệp nhất quán, dễ tìm và chia sẻ.",
     progress: 100,
     href: "#du-an-1",
+    color: "#EB168C",
+    titleLines: ["Quản lý tệp", "và thư mục"],
   },
   {
     icon: Search,
@@ -53,6 +55,8 @@ const TASKS = [
     desc: "Vận dụng toán tử tìm kiếm nâng cao và đánh giá độ tin cậy của nguồn học thuật.",
     progress: 100,
     href: "#du-an-2",
+    color: "#2463EB",
+    titleLines: ["Tìm kiếm &", "đánh giá thông tin"],
   },
   {
     icon: MessageSquareText,
@@ -60,6 +64,8 @@ const TASKS = [
     desc: "Thiết kế prompt rõ vai trò, bối cảnh, yêu cầu để khai thác AI đúng mục tiêu.",
     progress: 100,
     href: "#du-an-3",
+    color: "#8B46E8",
+    titleLines: ["Viết Prompt", "hiệu quả"],
   },
   {
     icon: Users,
@@ -67,6 +73,8 @@ const TASKS = [
     desc: "Lập kế hoạch, phân công và theo dõi tiến độ nhóm bằng công cụ số.",
     progress: 100,
     href: "#du-an-4",
+    color: "#10A9AE",
+    titleLines: ["Hợp tác", "trực tuyến"],
   },
   {
     icon: Sparkles,
@@ -74,6 +82,8 @@ const TASKS = [
     desc: "Sản xuất sản phẩm số hoàn chỉnh với quy trình con người – AI kết hợp.",
     progress: 100,
     href: "#du-an-5",
+    color: "#FF7A00",
+    titleLines: ["Sáng tạo", "nội dung với AI"],
   },
   {
     icon: ShieldCheck,
@@ -81,6 +91,8 @@ const TASKS = [
     desc: "Phân tích đạo đức AI và xây dựng bộ nguyên tắc cá nhân khi sử dụng.",
     progress: 100,
     href: "#du-an-6",
+    color: "#2463EB",
+    titleLines: ["Sử dụng AI", "có trách nhiệm"],
   },
 ];
 
