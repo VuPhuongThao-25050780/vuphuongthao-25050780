@@ -46,6 +46,10 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-pink-strong: var(--brand-pink-strong);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-soft: var(--brand-blue-soft);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -62,26 +66,38 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --radius: 1rem;
+  /* Nền nhẹ nhàng, hơi ấm pastel */
+  --background: oklch(0.985 0.012 330);
+  --foreground: oklch(0.28 0.06 275);
+  --card: oklch(0.995 0.006 330);
+  --card-foreground: oklch(0.28 0.06 275);
+  --popover: oklch(0.995 0.006 330);
+  --popover-foreground: oklch(0.28 0.06 275);
+  /* Xanh dịu làm màu chính */
+  --primary: oklch(0.64 0.13 245);
+  --primary-foreground: oklch(0.99 0.01 250);
+  /* Hồng pastel làm màu phụ/nhấn */
+  --secondary: oklch(0.93 0.05 350);
+  --secondary-foreground: oklch(0.4 0.12 350);
+  --muted: oklch(0.95 0.02 320);
+  --muted-foreground: oklch(0.55 0.05 285);
+  --accent: oklch(0.88 0.08 350);
+  --accent-foreground: oklch(0.38 0.13 350);
+  --destructive: oklch(0.62 0.2 20);
+  --destructive-foreground: oklch(0.99 0.01 20);
+  --border: oklch(0.9 0.03 330);
+  --input: oklch(0.9 0.03 330);
+  --ring: oklch(0.64 0.13 245);
+  /* Token thương hiệu bổ sung */
+  --brand-pink: oklch(0.82 0.1 350);
+  --brand-pink-strong: oklch(0.68 0.16 350);
+  --brand-blue: oklch(0.64 0.13 245);
+  --brand-blue-soft: oklch(0.78 0.09 235);
+  --gradient-hero: linear-gradient(135deg, oklch(0.9 0.07 350) 0%, oklch(0.88 0.07 300) 45%, oklch(0.86 0.08 235) 100%);
+  --gradient-primary: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-pink-strong) 100%);
+  --shadow-soft: 0 10px 30px -12px oklch(0.5 0.1 320 / 0.28);
+  --shadow-glow: 0 20px 50px -18px oklch(0.6 0.14 320 / 0.35);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +156,31 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: "Fraunces", ui-serif, Georgia, serif;
+  }
+}
+
+/* Hiệu ứng reveal khi cuộn */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 84px;
   }
 }

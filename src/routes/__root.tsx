@@ -77,14 +77,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Portfolio Kỹ thuật số cá nhân | Nhập môn Công nghệ số & AI" },
+      {
+        name: "description",
+        content:
+          "Portfolio kỹ thuật số cá nhân trình bày hành trình học tập môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo qua 6 dự án, minh chứng và tổng kết.",
+      },
+      { name: "author", content: "Sinh viên" },
+      {
+        property: "og:title",
+        content: "Portfolio Kỹ thuật số cá nhân | Nhập môn Công nghệ số & AI",
+      },
+      {
+        property: "og:description",
+        content:
+          "Hành trình học tập môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo: 6 dự án, minh chứng trực quan và tự đánh giá.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -92,6 +102,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -102,7 +122,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="vi">
       <head>
         <HeadContent />
       </head>
