@@ -19,6 +19,9 @@ import {
   ChevronRight,
   CheckCircle2,
   Quote,
+  BookOpen,
+  Send,
+  TrendingUp,
 } from "lucide-react";
 import { useReveal } from "../hooks/use-reveal";
 
@@ -46,6 +49,8 @@ const TASKS = [
     desc: "Tổ chức dữ liệu học tập khoa học, đặt tên tệp nhất quán, dễ tìm và chia sẻ.",
     progress: 100,
     href: "#du-an-1",
+    color: "#EB168C",
+    titleLines: ["Quản lý tệp", "và thư mục"],
   },
   {
     icon: Search,
@@ -53,6 +58,8 @@ const TASKS = [
     desc: "Vận dụng toán tử tìm kiếm nâng cao và đánh giá độ tin cậy của nguồn học thuật.",
     progress: 100,
     href: "#du-an-2",
+    color: "#2463EB",
+    titleLines: ["Tìm kiếm &", "đánh giá thông tin"],
   },
   {
     icon: MessageSquareText,
@@ -60,6 +67,8 @@ const TASKS = [
     desc: "Thiết kế prompt rõ vai trò, bối cảnh, yêu cầu để khai thác AI đúng mục tiêu.",
     progress: 100,
     href: "#du-an-3",
+    color: "#8B46E8",
+    titleLines: ["Viết Prompt", "hiệu quả"],
   },
   {
     icon: Users,
@@ -67,6 +76,8 @@ const TASKS = [
     desc: "Lập kế hoạch, phân công và theo dõi tiến độ nhóm bằng công cụ số.",
     progress: 100,
     href: "#du-an-4",
+    color: "#10A9AE",
+    titleLines: ["Hợp tác", "trực tuyến"],
   },
   {
     icon: Sparkles,
@@ -74,6 +85,8 @@ const TASKS = [
     desc: "Sản xuất sản phẩm số hoàn chỉnh với quy trình con người – AI kết hợp.",
     progress: 100,
     href: "#du-an-5",
+    color: "#FF7A00",
+    titleLines: ["Sáng tạo", "nội dung với AI"],
   },
   {
     icon: ShieldCheck,
@@ -81,6 +94,8 @@ const TASKS = [
     desc: "Phân tích đạo đức AI và xây dựng bộ nguyên tắc cá nhân khi sử dụng.",
     progress: 100,
     href: "#du-an-6",
+    color: "#2463EB",
+    titleLines: ["Sử dụng AI", "có trách nhiệm"],
   },
 ];
 
@@ -472,6 +487,135 @@ function SectionHeading({
 }
 
 /* ============================================================
+ *  TIMELINE INFOGRAPHIC – 6 NHIỆM VỤ
+ * ============================================================ */
+
+function HexIcon({
+  Icon,
+  color,
+}: {
+  Icon: typeof FolderTree;
+  color: string;
+}) {
+  const hex = "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)";
+  return (
+    <div className="relative size-[76px] shrink-0">
+      {/* viền chấm bên ngoài */}
+      <div
+        className="absolute -inset-2 rounded-full border border-dashed opacity-40"
+        style={{ borderColor: color, clipPath: hex }}
+      />
+      {/* khung gradient */}
+      <div
+        className="grid size-full place-items-center p-[2px] shadow-[var(--shadow-soft)]"
+        style={{
+          clipPath: hex,
+          background: `linear-gradient(135deg, ${color}, ${color}55)`,
+        }}
+      >
+        <div
+          className="grid size-full place-items-center bg-card"
+          style={{ clipPath: hex }}
+        >
+          <Icon className="size-7" style={{ color }} strokeWidth={2} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TimelineTask({
+  task,
+  num,
+  side,
+}: {
+  task: (typeof TASKS)[number];
+  num: number;
+  side: "left" | "right";
+}) {
+  const isLeft = side === "left";
+  const label = String(num).padStart(2, "0");
+  return (
+    <div
+      className={`reveal flex items-start gap-4 sm:gap-6 ${
+        isLeft ? "sm:flex-row-reverse sm:text-right" : "sm:flex-row"
+      }`}
+    >
+      {/* icon lục giác + mũi tên hướng vào trục */}
+      <div className="relative hidden sm:block">
+        <HexIcon Icon={task.icon} color={task.color} />
+      </div>
+
+      {/* khối nội dung */}
+      <div className={`flex-1 ${isLeft ? "sm:items-end" : ""}`}>
+        <div
+          className={`flex items-center gap-3 ${
+            isLeft ? "sm:flex-row-reverse" : ""
+          }`}
+        >
+          <span
+            className="font-display text-4xl font-extrabold leading-none tracking-tight"
+            style={{ color: task.color }}
+          >
+            {label}
+          </span>
+          <span
+            className="h-9 w-px"
+            style={{ backgroundColor: task.color }}
+            aria-hidden
+          />
+          <span className="sm:hidden">
+            <HexIcon Icon={task.icon} color={task.color} />
+          </span>
+        </div>
+
+        <h3 className="mt-3 font-display text-xl font-bold leading-snug text-foreground">
+          {task.titleLines.map((l) => (
+            <span key={l} className="block">
+              {l}
+            </span>
+          ))}
+        </h3>
+        <p
+          className={`mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground ${
+            isLeft ? "sm:ml-auto" : ""
+          }`}
+        >
+          {task.desc}
+        </p>
+
+        <div className={`mt-4 max-w-xs ${isLeft ? "sm:ml-auto" : ""}`}>
+          <div
+            className={`mb-1.5 flex items-center justify-between text-xs font-medium text-muted-foreground ${
+              isLeft ? "sm:flex-row-reverse" : ""
+            }`}
+          >
+            <span>Mức độ hoàn thành</span>
+            <span className="font-bold" style={{ color: task.color }}>
+              {task.progress}%
+            </span>
+          </div>
+          <div className="relative h-1.5 w-full rounded-full bg-secondary">
+            <div
+              className="h-full rounded-full"
+              style={{
+                width: `${task.progress}%`,
+                backgroundColor: task.color,
+              }}
+            />
+            <span
+              className="absolute top-1/2 size-3 -translate-y-1/2 rounded-full border-2 bg-card"
+              style={{ right: 0, borderColor: task.color }}
+              aria-hidden
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
  *  TRANG CHÍNH
  * ============================================================ */
 
@@ -707,53 +851,225 @@ function Index() {
       </section>
 
       {/* ===================== TỔNG QUAN / TIMELINE ===================== */}
-      <section id="tong-quan" className="bg-secondary/25 py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-5">
-          <SectionHeading
-            eyebrow="Hành trình học tập"
-            title="Tổng quan 6 nhiệm vụ chính"
-            desc="Sơ đồ hành trình rèn luyện năng lực số qua sáu nhiệm vụ, mỗi nhiệm vụ là một bước trưởng thành."
+      <section
+        id="tong-quan"
+        className="relative overflow-hidden py-20 sm:py-28"
+        style={{
+          background:
+            "linear-gradient(180deg, oklch(0.99 0.008 300), oklch(0.985 0.014 290))",
+        }}
+      >
+        {/* ---- Họa tiết nền trang trí ---- */}
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          {/* vòng tròn gradient góc trên trái */}
+          <div
+            className="absolute -left-24 -top-24 size-64 rounded-full opacity-30"
+            style={{
+              background:
+                "conic-gradient(from 90deg, #EB168C, #8B46E8, #2463EB, #EB168C)",
+              WebkitMask: "radial-gradient(farthest-side, transparent 62%, #000 64%)",
+              mask: "radial-gradient(farthest-side, transparent 62%, #000 64%)",
+            }}
           />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {TASKS.map((t, i) => (
-              <a
-                key={t.title}
-                href={t.href}
-                className="reveal group relative flex flex-col rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-glow)]"
-              >
-                <div className="flex items-center gap-3">
-                  <span
-                    className="grid size-12 shrink-0 place-items-center rounded-2xl text-primary-foreground transition-transform group-hover:scale-110"
-                    style={{ background: "var(--gradient-primary)" }}
-                  >
-                    <t.icon className="size-6" />
-                  </span>
-                  <span className="font-display text-sm font-bold text-muted-foreground">
-                    Nhiệm vụ {i + 1}
-                  </span>
-                </div>
-                <h3 className="mt-4 font-display text-lg font-bold text-foreground">
-                  {t.title}
-                </h3>
-                <p className="mt-2 flex-1 text-sm text-muted-foreground">{t.desc}</p>
-                <div className="mt-4">
-                  <div className="mb-1.5 flex items-center justify-between text-xs text-muted-foreground">
-                    <span>Mức độ hoàn thành</span>
-                    <span className="font-semibold text-primary">{t.progress}%</span>
-                  </div>
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-secondary">
-                    <div
-                      className="h-full rounded-full"
-                      style={{ width: `${t.progress}%`, background: "var(--gradient-primary)" }}
-                    />
-                  </div>
-                </div>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                  Xem chi tiết
-                  <ChevronRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </a>
+          {/* mảng gradient góc trên phải */}
+          <div
+            className="absolute -right-20 -top-16 size-72 rounded-full blur-3xl opacity-40"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(235,22,140,0.18), rgba(139,70,232,0.10), transparent 70%)",
+            }}
+          />
+          {/* máy bay giấy + đường bay */}
+          <svg
+            className="absolute right-10 top-28 hidden opacity-60 lg:block"
+            width="150"
+            height="90"
+            viewBox="0 0 150 90"
+            fill="none"
+          >
+            <path
+              d="M2 80 C 40 70, 60 40, 120 20"
+              stroke="#8B46E8"
+              strokeWidth="1.5"
+              strokeDasharray="4 5"
+              fill="none"
+            />
+          </svg>
+          <Send
+            className="absolute right-6 top-16 hidden size-8 -rotate-12 text-[#2463EB] opacity-70 lg:block"
+            strokeWidth={1.5}
+          />
+          {/* ngôi sao nhỏ */}
+          <Sparkles className="absolute left-[18%] top-40 size-4 text-[#EB168C] opacity-50" />
+          <Sparkles className="absolute right-[22%] bottom-40 size-5 text-[#8B46E8] opacity-40" />
+          {/* cụm chấm góc trên trái */}
+          <div className="absolute left-8 top-40 grid grid-cols-4 gap-2 opacity-40">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <span
+                key={i}
+                className="size-1.5 rounded-full"
+                style={{ backgroundColor: i % 2 ? "#8B46E8" : "#2463EB" }}
+              />
             ))}
+          </div>
+          {/* sóng góc dưới trái */}
+          <svg
+            className="absolute -left-4 bottom-10 opacity-30"
+            width="160"
+            height="60"
+            viewBox="0 0 160 60"
+            fill="none"
+          >
+            <path d="M0 20 Q 20 5, 40 20 T 80 20 T 120 20 T 160 20" stroke="#10A9AE" strokeWidth="1.5" fill="none" />
+            <path d="M0 40 Q 20 25, 40 40 T 80 40 T 120 40 T 160 40" stroke="#EB168C" strokeWidth="1.5" fill="none" />
+          </svg>
+          {/* cụm chấm góc dưới phải */}
+          <div className="absolute bottom-24 right-10 grid grid-cols-4 gap-2 opacity-40">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <span
+                key={i}
+                className="size-1.5 rounded-full"
+                style={{ backgroundColor: i % 2 ? "#EB168C" : "#8B46E8" }}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="relative mx-auto max-w-5xl px-5">
+          {/* ---- Đầu mục ---- */}
+          <div className="reveal mx-auto max-w-3xl text-center">
+            <div className="inline-flex items-center gap-2.5">
+              <span className="size-1.5 rounded-full bg-[#8B46E8]" />
+              <span className="size-2 rounded-full bg-[#EB168C]" />
+              <BookOpen className="size-4 text-[#EB168C]" strokeWidth={2} />
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#EB168C]">
+                Hành trình học tập
+              </span>
+              <span className="size-2 rounded-full bg-[#EB168C]" />
+              <span className="size-1.5 rounded-full bg-[#8B46E8]" />
+            </div>
+
+            <h2 className="mt-5 font-display text-4xl font-extrabold leading-tight text-[#0B1748] sm:text-5xl">
+              Tổng quan{" "}
+              <span
+                className="bg-clip-text text-transparent"
+                style={{
+                  backgroundImage: "linear-gradient(135deg, #8B46E8, #EB168C)",
+                  fontSize: "1.15em",
+                }}
+              >
+                6
+              </span>{" "}
+              nhiệm vụ chính
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
+              Sơ đồ hành trình rèn luyện năng lực số qua sáu nhiệm vụ, mỗi nhiệm
+              vụ là một bước trưởng thành.
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-2">
+              <span className="size-1.5 rounded-full bg-[#EB168C]" />
+              <span
+                className="h-0.5 w-28 rounded-full"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #EB168C, #8B46E8, #2463EB)",
+                }}
+              />
+              <span className="size-1.5 rounded-full bg-[#2463EB]" />
+            </div>
+          </div>
+
+          {/* ---- Trục hành trình + nội dung ---- */}
+          <div className="relative mt-16">
+            {/* đường trục dọc */}
+            <div
+              className="absolute inset-y-2 left-1/2 hidden w-px -translate-x-1/2 sm:block"
+              style={{
+                background:
+                  "linear-gradient(180deg, #EB168C, #2463EB, #8B46E8, #10A9AE, #FF7A00, #2463EB)",
+                opacity: 0.35,
+              }}
+            />
+
+            <div className="space-y-14 sm:space-y-16">
+              {TASKS.map((task, i) => {
+                const side = i % 2 === 0 ? "left" : "right";
+                return (
+                  <div
+                    key={task.title}
+                    className="relative grid gap-6 sm:grid-cols-2 sm:gap-16"
+                  >
+                    {/* điểm tròn trên trục */}
+                    <span
+                      aria-hidden
+                      className="absolute left-1/2 top-6 hidden size-4 -translate-x-1/2 place-items-center rounded-full border-2 bg-card sm:grid"
+                      style={{
+                        borderColor: task.color,
+                        boxShadow: `0 0 0 4px ${task.color}22`,
+                      }}
+                    >
+                      <span
+                        className="size-1.5 rounded-full"
+                        style={{ backgroundColor: task.color }}
+                      />
+                    </span>
+
+                    {side === "left" ? (
+                      <>
+                        <TimelineTask task={task} num={i + 1} side="left" />
+                        <div className="hidden sm:block" />
+                      </>
+                    ) : (
+                      <>
+                        <div className="hidden sm:block" />
+                        <TimelineTask task={task} num={i + 1} side="right" />
+                      </>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* ---- Thanh chân mục ---- */}
+          <div className="reveal mt-16 flex justify-center">
+            <div className="flex max-w-3xl flex-wrap items-center justify-center gap-3 rounded-full border border-border bg-card/70 px-6 py-3.5 shadow-[var(--shadow-soft)] backdrop-blur-sm">
+              <span
+                className="grid size-9 shrink-0 place-items-center rounded-full text-primary-foreground"
+                style={{ background: "linear-gradient(135deg, #8B46E8, #EB168C)" }}
+              >
+                <Target className="size-5" />
+              </span>
+              <p className="text-center text-sm font-medium text-[#0B1748]">
+                6 bước{" "}
+                <span
+                  className="bg-clip-text font-bold text-transparent"
+                  style={{ backgroundImage: "linear-gradient(135deg, #EB168C, #8B46E8)" }}
+                >
+                  vững chắc
+                </span>{" "}
+                – Năng lực số{" "}
+                <span
+                  className="bg-clip-text font-bold text-transparent"
+                  style={{ backgroundImage: "linear-gradient(135deg, #8B46E8, #2463EB)" }}
+                >
+                  toàn diện
+                </span>{" "}
+                – Sẵn sàng cho{" "}
+                <span
+                  className="bg-clip-text font-bold text-transparent"
+                  style={{ backgroundImage: "linear-gradient(135deg, #2463EB, #10A9AE)" }}
+                >
+                  tương lai
+                </span>
+              </p>
+              <span
+                className="grid size-9 shrink-0 place-items-center rounded-full text-primary-foreground"
+                style={{ background: "linear-gradient(135deg, #2463EB, #10A9AE)" }}
+              >
+                <TrendingUp className="size-5" />
+              </span>
+            </div>
           </div>
         </div>
       </section>
