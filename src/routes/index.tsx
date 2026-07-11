@@ -1479,20 +1479,40 @@ function Index() {
                       ({p.evidenceImages.length} ảnh)
                     </span>
                   </p>
-                  <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                  {p.fileUrl && (
+                    <a
+                      href={p.fileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-xs font-semibold text-primary transition hover:bg-primary/10"
+                    >
+                      <ImageIcon className="size-4" /> Tải file gốc: {p.fileName ?? "Tài liệu"}
+                    </a>
+                  )}
+                  <div
+                    className={`mt-4 grid gap-3 ${
+                      p.evidencePortrait
+                        ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+                        : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+                    }`}
+                  >
                     {p.evidenceImages.map((src, i) => (
                       <a
                         key={i}
                         href={src}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group overflow-hidden rounded-xl border border-border bg-secondary/30 shadow-sm transition hover:shadow-md"
+                        className="group overflow-hidden rounded-xl border border-border bg-white shadow-sm transition hover:shadow-md"
                       >
                         <img
                           src={src}
                           alt={`Minh chứng bài tập ${p.index} - ảnh ${i + 1}`}
                           loading="lazy"
-                          className="aspect-video w-full object-cover transition group-hover:scale-105"
+                          className={`w-full transition group-hover:scale-105 ${
+                            p.evidencePortrait
+                              ? "aspect-[3/4] object-contain"
+                              : "aspect-video object-cover"
+                          }`}
                         />
                       </a>
                     ))}
