@@ -350,11 +350,6 @@ const PROJECTS: Project[] = [
     tags: ["Prompt Engineering", "So sánh kết quả", "Tư duy cấu trúc"],
     evidence: "Ảnh chụp prompt ban đầu, prompt cải tiến và kết quả AI trả lời.",
     evidenceImages: EVIDENCE_3,
-    evidenceCaptions: [
-      "3 mức prompt cho tác vụ tóm tắt tài liệu học thuật",
-      "Kết quả AI giải thích khái niệm “trí tuệ nhân tạo” theo prompt nâng cao",
-      "Bộ câu hỏi ôn tập được AI tạo theo mức độ dễ – trung bình – khó",
-    ],
     integrity: {
       usage: [
         "Dùng AI để thử nghiệm và so sánh hiệu quả giữa các phiên bản prompt.",
@@ -426,12 +421,6 @@ const PROJECTS: Project[] = [
     tags: ["Quản lý dự án", "Cộng tác thời gian thực", "Tối ưu năng suất"],
     evidence: "Ảnh chụp bảng Trello cá nhân, Google Docs nhóm, cuộc họp Teams và thư mục Google Drive.",
     evidenceImages: EVIDENCE_4,
-    evidenceCaptions: [
-      "Bảng Trello quản lý và theo dõi nhiệm vụ cá nhân",
-      "Google Docs nhóm 9 – Workshop Project (viết & góp ý qua comment)",
-      "Cuộc họp phối hợp nhóm trên Microsoft Teams",
-      "Thư mục lưu trữ tài liệu dự án trên Google Drive",
-    ],
     integrity: {
       usage: [
         "Sử dụng công cụ trực tuyến để quản lý nhiệm vụ, cộng tác nội dung và lưu trữ tài liệu.",
@@ -568,11 +557,6 @@ const PROJECTS: Project[] = [
     tags: ["Đạo đức AI", "Liêm chính học thuật", "Tư duy phản biện"],
     evidence: "Ảnh bộ nguyên tắc sử dụng AI cá nhân và ghi chú phân tích đạo đức.",
     evidenceImages: EVIDENCE_6,
-    evidenceCaptions: [
-      "Trích dẫn minh bạch việc sử dụng AI (AI disclosure) trong bài luận",
-      "Ghi chú phân tích ranh giới hỗ trợ hợp lý và gian lận học thuật",
-      "Infographic “Sử dụng AI có trách nhiệm trong học thuật”",
-    ],
     integrity: {
       usage: [
         "Dùng AI (ChatGPT) hỗ trợ xây dựng khung sườn lập luận và hiệu đính ngữ pháp cho bài luận.",
