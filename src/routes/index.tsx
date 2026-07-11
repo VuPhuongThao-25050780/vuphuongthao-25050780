@@ -52,6 +52,7 @@ import mc3n_7 from "@/assets/minhchung3new/b3n_07.png.asset.json";
 import mc3n_8 from "@/assets/minhchung3new/b3n_08.png.asset.json";
 import mc3n_9 from "@/assets/minhchung3new/b3n_09.png.asset.json";
 import baocao3Pdf from "@/assets/minhchung3new/baocao3.pdf.asset.json";
+import baocao4Pdf from "@/assets/minhchung4new/baocao4.pdf.asset.json";
 
 const EVIDENCE_1: string[] = [
   mc3641.url, mc3642.url, mc3643.url, mc3644.url, mc3645.url, mc3646.url,
@@ -438,6 +439,8 @@ const PROJECTS: Project[] = [
     tags: ["Quản lý dự án", "Cộng tác thời gian thực", "Tối ưu năng suất"],
     evidence: "Ảnh chụp bảng Trello cá nhân, Google Docs nhóm, cuộc họp Teams và thư mục Google Drive.",
     evidenceImages: EVIDENCE_4,
+    fileUrl: baocao4Pdf.url,
+    fileName: "Báo cáo bài 4 (PDF)",
     integrity: {
       usage: [
         "Sử dụng công cụ trực tuyến để quản lý nhiệm vụ, cộng tác nội dung và lưu trữ tài liệu.",
