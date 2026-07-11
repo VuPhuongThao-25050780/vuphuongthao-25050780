@@ -558,9 +558,11 @@ const PROJECTS: Project[] = [
     title: "Bài tập 6 – Sử dụng AI có trách nhiệm trong học tập và nghiên cứu",
     goal: "Nghiên cứu chính sách sử dụng AI của trường, phân tích các vấn đề đạo đức và xây dựng bộ nguyên tắc cá nhân sử dụng AI có trách nhiệm.",
     process: [
-      "Tìm hiểu chính sách AI của ĐHQGHN và các trường: cho phép AI hỗ trợ nhưng cấm thay thế tư duy, bắt buộc minh bạch (AI disclosure).",
-      "Thực hiện bài luận “Thách thức của công nghệ số với giáo dục đại học” có sử dụng AI hỗ trợ dàn ý và hiệu đính.",
-      "Phân tích vấn đề đạo đức, xây dựng bộ nguyên tắc cá nhân và thiết kế infographic tuyên truyền.",
+      "Tìm hiểu chính sách AI của ĐHQGHN và một số trường đại học: cho phép AI hỗ trợ nhưng cấm thay thế tư duy, bắt buộc minh bạch (AI disclosure).",
+      "So sánh quy định giữa các trường để nhận diện điểm chung về liêm chính học thuật khi dùng AI.",
+      "Thực hiện bài luận “Thách thức của công nghệ số với giáo dục đại học” có dùng AI hỗ trợ dàn ý và hiệu đính, ghi rõ phần AI hỗ trợ.",
+      "Phân tích các tình huống đạo đức: đâu là hỗ trợ hợp lý, đâu là gian lận học thuật.",
+      "Xây dựng bộ nguyên tắc cá nhân sử dụng AI có trách nhiệm và thiết kế infographic tuyên truyền.",
     ],
     tools: ["ChatGPT", "Quy định ĐHQGHN", "Tài liệu học thuật", "Canva (infographic)"],
     tags: ["Đạo đức AI", "Liêm chính học thuật", "Tư duy phản biện"],
@@ -590,6 +592,19 @@ const PROJECTS: Project[] = [
     lessons: [
       "AI không phải mối đe dọa mà là bài kiểm tra năng lực và bản lĩnh của người học.",
       "Làm chủ AI có trách nhiệm: minh bạch – trung thực – kiểm chứng – chịu trách nhiệm.",
+    ],
+    analysis: [
+      "Ranh giới giữa hỗ trợ hợp lý và gian lận nằm ở mức độ AI can thiệp vào tư duy của người học.",
+      "Sao chép nguyên văn AI là “đạo văn của đạo văn” vì AI không ghi nguồn chính xác và có thể sai lệch thông tin.",
+      "Lạm dụng AI làm mất dần năng lực lập luận độc lập; ngược lại, dùng đúng cách sẽ nâng cao hiệu suất học tập.",
+      "Chính sách của các trường đều thống nhất: AI được phép hỗ trợ nhưng người học phải minh bạch và chịu trách nhiệm cuối cùng.",
+      "Minh bạch (AI disclosure) vừa bảo vệ người học, vừa giữ được sự công bằng trong đánh giá học thuật.",
+    ],
+    lessons: [
+      "AI không phải mối đe dọa mà là bài kiểm tra năng lực và bản lĩnh của người học.",
+      "Làm chủ AI có trách nhiệm dựa trên bốn trụ cột: minh bạch – trung thực – kiểm chứng – chịu trách nhiệm.",
+      "Cần tự đặt giới hạn sử dụng AI phù hợp với từng học phần và quy định của giảng viên.",
+      "Ưu tiên phát triển tư duy độc lập trước, xem AI là công cụ tăng tốc chứ không phải chỗ dựa thay thế.",
     ],
     extra: (
       <div className="mt-5 rounded-2xl border border-border bg-secondary/40 p-5">
