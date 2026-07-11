@@ -91,17 +91,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Hành trình học tập môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo: 6 dự án, minh chứng trực quan và tự đánh giá.",
+          "Portfolio kỹ thuật số cá nhân trình bày hành trình học tập môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo qua 6 dự án, minh chứng và tổng kết.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Portfolio Kỹ thuật số cá nhân | Nhập môn Công nghệ số & AI" },
+      { name: "twitter:description", content: "Portfolio kỹ thuật số cá nhân trình bày hành trình học tập môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo qua 6 dự án, minh chứng và tổng kết." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c982d6d8-381d-4be2-8a58-63e1426d2f24/id-preview-a4c9f2bf--7335a441-0f92-4ada-88ac-31a3d0ec5bf6.lovable.app-1783751194302.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c982d6d8-381d-4be2-8a58-63e1426d2f24/id-preview-a4c9f2bf--7335a441-0f92-4ada-88ac-31a3d0ec5bf6.lovable.app-1783751194302.png" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
