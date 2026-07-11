@@ -1104,7 +1104,7 @@ function Index() {
                     Học tập số & AI
                   </p>
                   <p className="text-sm text-primary-foreground/80">
-                    Hình minh họa (placeholder)
+                    Hành trình 6 dự án thực hành
                   </p>
                 </div>
               </div>
