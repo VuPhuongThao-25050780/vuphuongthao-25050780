@@ -344,7 +344,7 @@ const PROJECTS: Project[] = [
         <table className="w-full min-w-[640px] text-left text-sm">
           <thead className="bg-secondary/50 text-secondary-foreground">
             <tr>
-              {["Tiêu chí", "Prompt ban đầu", "Prompt cải tiến", "Nhận xét"].map((h) => (
+              {["Tiêu chí", "Prompt cơ bản", "Prompt cải tiến", "Prompt nâng cao"].map((h) => (
                 <th key={h} className="px-4 py-3 font-semibold">
                   {h}
                 </th>
@@ -353,12 +353,10 @@ const PROJECTS: Project[] = [
           </thead>
           <tbody className="divide-y divide-border">
             {[
-              ["Độ rõ ràng", "Mơ hồ, một câu ngắn", "Nêu rõ mục tiêu và phạm vi", "Cải tiến rõ ràng hơn hẳn"],
-              ["Vai trò", "Không xác định", "Gán vai trò chuyên gia", "AI trả lời chuyên sâu hơn"],
-              ["Bối cảnh", "Thiếu", "Đầy đủ bối cảnh học tập", "Kết quả sát nhu cầu"],
-              ["Định dạng đầu ra", "Tự do", "Yêu cầu bảng / gạch đầu dòng", "Dễ đọc, dễ dùng lại"],
-              ["Mức độ chính xác", "Chung chung", "Có tiêu chí đánh giá", "Ít sai lệch hơn"],
-              ["Khả năng kiểm soát", "Thấp", "Cao", "Chủ động điều chỉnh kết quả"],
+              ["Độ rõ ràng", "Thấp", "Trung bình", "Cao"],
+              ["Độ chi tiết", "Ít", "Khá", "Rất cao"],
+              ["Tính hữu ích", "Trung bình", "Tốt", "Rất tốt"],
+              ["Kiểm soát kết quả", "Thấp", "Trung bình", "Cao"],
             ].map((row) => (
               <tr key={row[0]} className="bg-card">
                 <td className="px-4 py-3 font-medium text-foreground">{row[0]}</td>
