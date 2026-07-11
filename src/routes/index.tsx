@@ -1003,52 +1003,50 @@ function Index() {
             </div>
           </div>
 
-          {/* ---- Trục hành trình + nội dung ---- */}
+          {/* ---- Sơ đồ 2 cột + trục trung tâm ---- */}
           <div className="relative mt-16">
-            {/* đường trục dọc */}
+            {/* đường trục dọc trung tâm */}
             <div
-              className="absolute inset-y-2 left-1/2 hidden w-px -translate-x-1/2 sm:block"
-              style={{
-                background:
-                  "linear-gradient(180deg, #EB168C, #2463EB, #8B46E8, #10A9AE, #FF7A00, #2463EB)",
-                opacity: 0.35,
-              }}
+              className="absolute inset-y-4 left-1/2 hidden w-px -translate-x-1/2 border-l border-dashed sm:block"
+              style={{ borderColor: "#94A3B8", opacity: 0.55 }}
             />
 
-            <div className="space-y-14 sm:space-y-16">
-              {TASKS.map((task, i) => {
-                const side = i % 2 === 0 ? "left" : "right";
+            <div className="space-y-12 sm:space-y-16">
+              {Array.from({ length: 3 }).map((_, r) => {
+                const left = TASKS[r * 2];
+                const right = TASKS[r * 2 + 1];
                 return (
                   <div
-                    key={task.title}
-                    className="relative grid gap-6 sm:grid-cols-2 sm:gap-16"
+                    key={r}
+                    className="relative grid gap-10 sm:grid-cols-2 sm:gap-0"
                   >
                     {/* điểm tròn trên trục */}
                     <span
                       aria-hidden
-                      className="absolute left-1/2 top-6 hidden size-4 -translate-x-1/2 place-items-center rounded-full border-2 bg-card sm:grid"
+                      className="absolute left-1/2 top-1/2 hidden size-5 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-2 bg-card sm:grid"
                       style={{
-                        borderColor: task.color,
-                        boxShadow: `0 0 0 4px ${task.color}22`,
+                        borderColor: left.color,
+                        boxShadow: `0 0 0 5px ${left.color}1f`,
                       }}
                     >
                       <span
-                        className="size-1.5 rounded-full"
-                        style={{ backgroundColor: task.color }}
+                        className="size-2 rounded-full"
+                        style={{ backgroundColor: left.color }}
                       />
                     </span>
-
-                    {side === "left" ? (
-                      <>
-                        <TimelineTask task={task} num={i + 1} side="left" />
-                        <div className="hidden sm:block" />
-                      </>
-                    ) : (
-                      <>
-                        <div className="hidden sm:block" />
-                        <TimelineTask task={task} num={i + 1} side="right" />
-                      </>
+                    {/* chấm nối nhỏ giữa các hàng */}
+                    {r < 2 && (
+                      <span
+                        aria-hidden
+                        className="absolute bottom-[-2.6rem] left-1/2 hidden size-3.5 -translate-x-1/2 place-items-center rounded-full border-2 bg-card sm:grid"
+                        style={{ borderColor: "#2463EB" }}
+                      >
+                        <span className="size-1.5 rounded-full bg-[#2463EB]" />
+                      </span>
                     )}
+
+                    <TaskCell task={left} num={r * 2 + 1} side="left" />
+                    <TaskCell task={right} num={r * 2 + 2} side="right" />
                   </div>
                 );
               })}
