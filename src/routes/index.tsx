@@ -183,14 +183,18 @@ const PROJECTS: Project[] = [
     index: 1,
     icon: FolderTree,
     title: "Bài tập 1 – Thao tác cơ bản với tệp tin và thư mục",
-    goal: "Biết tạo thư mục, lưu trữ tài liệu khoa học, đặt tên tệp nhất quán và quản lý dữ liệu học tập một cách bền vững.",
+    goal: "Thành thạo các thao tác quản lý tệp tin và thư mục trên hệ điều hành Windows, bao gồm tạo, đổi tên, sao chép, di chuyển và xóa tệp tin.",
     process: [
-      "Tạo thư mục chính cho môn học làm gốc lưu trữ toàn bộ dữ liệu.",
-      "Chia thư mục thành các nhóm: Bài tập, Tài liệu tham khảo, Hình ảnh minh chứng, Sản phẩm cuối kỳ.",
-      "Đặt tên tệp theo quy tắc thống nhất, có STT, tên bài, ngày và phiên bản.",
+      "Mở File Explorer bằng tổ hợp phím Windows + E.",
+      "Truy cập ổ đĩa D: và tạo thư mục mới “Tài liệu học tập”.",
+      "Tạo các thư mục con: Bài tập, Slide bài giảng, Tài liệu tham khảo.",
+      "Tạo file Word “Ghi chú.docx” trong thư mục Bài tập.",
+      "Thực hành sao chép, di chuyển, đổi tên tệp tin.",
+      "Tạo shortcut cho thư mục thường dùng ra Desktop.",
+      "Xóa các tệp tin không cần thiết (di chuyển vào Recycle Bin).",
     ],
-    tools: ["File Explorer", "Google Drive", "OneDrive"],
-    tags: ["Tổ chức dữ liệu", "Đặt tên nhất quán", "Sao lưu đám mây"],
+    tools: ["File Explorer", "Microsoft Word", "Windows 10/11"],
+    tags: ["Quản lý tệp tin", "Tổ chức thư mục", "Thao tác cơ bản"],
     evidence: "Ảnh chụp màn hình cấu trúc thư mục và sơ đồ cây thư mục môn học.",
     evidenceImages: EVIDENCE_1,
     integrity: {
@@ -216,20 +220,21 @@ const PROJECTS: Project[] = [
     extra: (
       <div className="mt-5 rounded-2xl border border-border bg-secondary/40 p-5">
         <p className="text-sm font-semibold text-secondary-foreground">
-          Quy tắc đặt tên tệp sáng tạo
+          Mục tiêu bài tập
         </p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          <code className="rounded-lg bg-card px-3 py-1.5 text-xs font-medium shadow-sm">
-            MonHoc_Chuong_BaiTap_NgayThucHien_PhienBan
-          </code>
-          <code className="rounded-lg bg-card px-3 py-1.5 text-xs font-medium shadow-sm">
-            NMCNS_Bai01_QuanLyTep_2026_v1
-          </code>
-        </div>
-        <p className="mt-3 text-sm text-muted-foreground">
-          Quy tắc này hỗ trợ tìm kiếm nhanh, sắp xếp theo thứ tự thời gian, tránh
-          nhầm lẫn phiên bản và giúp chia sẻ tệp rõ ràng cho nhóm.
-        </p>
+        <ul className="mt-3 space-y-2">
+          {[
+            "Mở và sử dụng File Explorer để quản lý tệp tin.",
+            "Tạo thư mục mới và tổ chức cấu trúc thư mục.",
+            "Thực hiện các thao tác sao chép, di chuyển, đổi tên và xóa tệp tin.",
+            "Tạo shortcut và quản lý tệp tin hiệu quả.",
+          ].map((item) => (
+            <li key={item} className="flex gap-3 text-sm text-muted-foreground">
+              <span className="mt-1 size-1.5 shrink-0 rounded-full bg-primary" />
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     ),
   },
