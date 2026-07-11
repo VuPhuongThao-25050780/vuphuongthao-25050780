@@ -305,19 +305,19 @@ const PROJECTS: Project[] = [
     index: 3,
     icon: MessageSquareText,
     title: "Bài tập 3 – Viết Prompt hiệu quả cho các tác vụ học tập",
-    goal: "Biết cách viết prompt rõ ràng để AI trả lời đúng yêu cầu, đúng định dạng và phù hợp mục tiêu học tập.",
+    goal: "Rèn kỹ năng viết prompt để khai thác tối đa mô hình ngôn ngữ lớn (LLM), qua việc so sánh 3 mức prompt: cơ bản – cải tiến – nâng cao.",
     process: [
-      "Viết một prompt ban đầu còn chung chung, thiếu bối cảnh.",
-      "Viết prompt cải tiến có đầy đủ vai trò, bối cảnh, yêu cầu, định dạng đầu ra và tiêu chí đánh giá.",
-      "So sánh kết quả giữa hai prompt và rút ra nhận xét.",
+      "Thực hiện 3 tác vụ: tóm tắt tài liệu học thuật, giải thích khái niệm phức tạp, tạo câu hỏi ôn tập.",
+      "Mỗi tác vụ viết 3 phiên bản prompt: cơ bản (một câu ngắn), cải tiến (thêm ràng buộc, định dạng), nâng cao (gán vai trò, từng bước, tiêu chí).",
+      "So sánh chất lượng đầu ra và rút ra nguyên tắc viết prompt hiệu quả.",
     ],
     tools: ["ChatGPT", "Gemini", "Claude"],
     tags: ["Prompt Engineering", "So sánh kết quả", "Tư duy cấu trúc"],
     evidence: "Ảnh chụp prompt ban đầu, prompt cải tiến và kết quả AI trả lời.",
     evidenceCaptions: [
-      "Prompt ban đầu còn chung chung, thiếu bối cảnh",
-      "Prompt cải tiến đầy đủ vai trò, bối cảnh, yêu cầu",
-      "Kết quả AI trả lời cho hai phiên bản prompt",
+      "3 mức prompt cho tác vụ tóm tắt tài liệu học thuật",
+      "Kết quả AI giải thích khái niệm “trí tuệ nhân tạo” theo prompt nâng cao",
+      "Bộ câu hỏi ôn tập được AI tạo theo mức độ dễ – trung bình – khó",
     ],
     integrity: {
       usage: [
@@ -331,13 +331,13 @@ const PROJECTS: Project[] = [
       ],
     },
     analysis: [
-      "Prompt cải tiến giúp AI hiểu rõ vai trò, phạm vi, mục tiêu và cách trình bày.",
-      "Yêu cầu càng cụ thể, kết quả càng có cấu trúc, ít sai lệch và bám sát mục đích.",
-      "AI phản hồi dựa trên ngữ cảnh và độ cụ thể của yêu cầu, nên chi tiết đầu vào quyết định chất lượng đầu ra.",
+      "Prompt nâng cao hiệu quả nhờ có vai trò (role), cấu trúc rõ ràng và hướng dẫn định dạng đầu ra.",
+      "Prompt cơ bản quá chung chung, không kiểm soát được độ dài, nội dung nên dễ thiếu chính xác.",
+      "Kỹ thuật prompt engineering: role prompting, step-by-step, ràng buộc (constraint) và formatting quyết định chất lượng.",
     ],
     lessons: [
-      "Muốn AI trả lời tốt cần đặt câu hỏi tốt.",
-      "Prompt hiệu quả phải rõ vai trò, bối cảnh, nhiệm vụ, tiêu chí và định dạng.",
+      "Prompt càng rõ ràng, có cấu trúc và định hướng cụ thể thì kết quả càng chất lượng.",
+      "Nguyên tắc: rõ ràng – đặt vai trò – thêm ràng buộc – yêu cầu cấu trúc – dùng ví dụ – chia nhỏ nhiệm vụ.",
     ],
     extra: (
       <div className="mt-5 overflow-x-auto rounded-2xl border border-border">
