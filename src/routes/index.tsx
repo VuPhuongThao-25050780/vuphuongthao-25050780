@@ -53,6 +53,7 @@ import mc3n_8 from "@/assets/minhchung3new/b3n_08.png.asset.json";
 import mc3n_9 from "@/assets/minhchung3new/b3n_09.png.asset.json";
 import baocao3Pdf from "@/assets/minhchung3new/baocao3.pdf.asset.json";
 import baocao4Pdf from "@/assets/minhchung4new/baocao4.pdf.asset.json";
+import baocao6Pdf from "@/assets/minhchung6new/baocao6.pdf.asset.json";
 
 const EVIDENCE_1: string[] = [
   mc3641.url, mc3642.url, mc3643.url, mc3644.url, mc3645.url, mc3646.url,
@@ -577,6 +578,8 @@ const PROJECTS: Project[] = [
     tags: ["Đạo đức AI", "Liêm chính học thuật", "Tư duy phản biện"],
     evidence: "Ảnh bộ nguyên tắc sử dụng AI cá nhân và ghi chú phân tích đạo đức.",
     evidenceImages: EVIDENCE_6,
+    fileUrl: baocao6Pdf.url,
+    fileName: "Báo cáo bài 6 (PDF)",
     integrity: {
       usage: [
         "Dùng AI (ChatGPT) hỗ trợ xây dựng khung sườn lập luận và hiệu đính ngữ pháp cho bài luận.",
