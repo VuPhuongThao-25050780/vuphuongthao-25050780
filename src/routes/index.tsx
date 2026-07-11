@@ -38,7 +38,6 @@ const NAV = [
   { id: "gioi-thieu", label: "Giới thiệu" },
   { id: "tong-quan", label: "Tổng quan" },
   { id: "du-an", label: "Dự án học tập" },
-  { id: "minh-chung", label: "Minh chứng" },
   { id: "ky-nang", label: "Kỹ năng" },
   { id: "tong-ket", label: "Tổng kết" },
 ];
