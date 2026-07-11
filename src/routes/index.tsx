@@ -18,12 +18,18 @@ import mc3654 from "@/assets/minhchung1/IMG_3654.jpg.asset.json";
 import mc3655 from "@/assets/minhchung1/IMG_3655.jpg.asset.json";
 import mc3656 from "@/assets/minhchung1/IMG_3656.jpg.asset.json";
 import mc3657 from "@/assets/minhchung1/IMG_3657.jpg.asset.json";
+import mc2p1 from "@/assets/minhchung2/page1.jpg.asset.json";
+import mc2p2 from "@/assets/minhchung2/page2.jpg.asset.json";
+import mc2p3 from "@/assets/minhchung2/page3.jpg.asset.json";
+import mc2p4 from "@/assets/minhchung2/page4.jpg.asset.json";
+import baocao2Pdf from "@/assets/minhchung2/baocao2.pdf.asset.json";
 
 const EVIDENCE_1: string[] = [
   mc3641.url, mc3642.url, mc3643.url, mc3644.url, mc3645.url, mc3646.url,
   mc3647.url, mc3648.url, mc3649.url, mc3650.url, mc3651.url, mc3652.url,
   mc3653.url, mc3654.url, mc3655.url, mc3656.url, mc3657.url,
 ];
+const EVIDENCE_2: string[] = [mc2p1.url, mc2p2.url, mc2p3.url, mc2p4.url];
 import {
   FolderTree,
   Search,
