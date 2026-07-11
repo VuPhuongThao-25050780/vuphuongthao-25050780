@@ -136,6 +136,7 @@ type Project = {
   analysis: string[];
   lessons: string[];
   extra?: React.ReactNode;
+  integrity: { usage: string[]; commitment: string[] };
 };
 
 const PROJECTS: Project[] = [
@@ -154,6 +155,17 @@ const PROJECTS: Project[] = [
     tags: ["Tổ chức dữ liệu", "Đặt tên nhất quán", "Sao lưu đám mây"],
     evidence: "Ảnh chụp màn hình cấu trúc thư mục và sơ đồ cây thư mục môn học.",
     evidenceImages: EVIDENCE_1,
+    integrity: {
+      usage: [
+        "Không sử dụng AI trong bài tập này.",
+        "Tự thực hành trực tiếp trên máy tính theo hướng dẫn của giảng viên.",
+      ],
+      commitment: [
+        "Tôi đã tự thực hiện tất cả thao tác tạo, đổi tên, sao chép và sắp xếp thư mục.",
+        "Ảnh chụp màn hình là minh chứng thực tế từ quá trình thực hành.",
+        "Toàn bộ cấu trúc dữ liệu được xây dựng dựa trên trải nghiệm cá nhân.",
+      ],
+    },
     analysis: [
       "Cấu trúc phân nhóm giúp dữ liệu dễ tìm, tránh thất lạc và thuận tiện khi nộp bài.",
       "Quy tắc đặt tên phân biệt rõ phiên bản cũ – mới, hỗ trợ làm việc lâu dài và cộng tác.",
@@ -197,6 +209,17 @@ const PROJECTS: Project[] = [
     tools: ["Google Search", "Google Scholar", "Website trường đại học", "Báo cáo PDF"],
     tags: ["Toán tử nâng cao", "Đánh giá nguồn", "Tư duy phản biện"],
     evidence: "Ảnh kết quả tìm kiếm với toán tử nâng cao và bảng đánh giá nguồn.",
+    integrity: {
+      usage: [
+        "Dùng AI để gợi ý từ khóa và cách diễn đạt truy vấn tìm kiếm học thuật.",
+        "Mọi nguồn tài liệu đều do tôi tự tìm, tự đọc và tự đánh giá độ tin cậy.",
+      ],
+      commitment: [
+        "Tôi tự kiểm chứng tính chính xác của từng nguồn trước khi sử dụng.",
+        "Ghi rõ nguồn gốc và tác giả cho toàn bộ thông tin tham khảo.",
+        "AI chỉ đóng vai trò hỗ trợ tìm kiếm, không thay thế đánh giá của tôi.",
+      ],
+    },
     analysis: [
       "Tìm kiếm hiệu quả cần chiến lược, không chỉ là nhập từ khóa.",
       "Toán tử nâng cao giúp lọc nhiễu, khoanh vùng tài liệu đúng định dạng và nguồn.",
@@ -273,6 +296,17 @@ const PROJECTS: Project[] = [
     tools: ["ChatGPT", "Gemini", "Claude"],
     tags: ["Prompt Engineering", "So sánh kết quả", "Tư duy cấu trúc"],
     evidence: "Ảnh chụp prompt ban đầu, prompt cải tiến và kết quả AI trả lời.",
+    integrity: {
+      usage: [
+        "Dùng AI để thử nghiệm và so sánh hiệu quả giữa các phiên bản prompt.",
+        "Tự thiết kế, chỉnh sửa và tối ưu prompt dựa trên mục tiêu học tập của mình.",
+      ],
+      commitment: [
+        "Toàn bộ prompt và nhận xét cải tiến do tôi tự viết và tự phân tích.",
+        "Kết quả AI được tôi đánh giá, chọn lọc chứ không sao chép nguyên văn.",
+        "Minh bạch ghi lại cả prompt chưa tốt để thể hiện quá trình học thật.",
+      ],
+    },
     analysis: [
       "Prompt cải tiến giúp AI hiểu rõ vai trò, phạm vi, mục tiêu và cách trình bày.",
       "Yêu cầu càng cụ thể, kết quả càng có cấu trúc, ít sai lệch và bám sát mục đích.",
@@ -329,6 +363,17 @@ const PROJECTS: Project[] = [
     tools: ["Trello", "Notion", "Google Sheets", "Microsoft Planner"],
     tags: ["Quản lý dự án", "Phân công minh bạch", "Theo dõi tiến độ"],
     evidence: "Ảnh chụp bảng công việc nhóm và biểu đồ tiến độ.",
+    integrity: {
+      usage: [
+        "Dùng công cụ trực tuyến và AI để gợi ý cách phân chia công việc hợp lý.",
+        "Việc phối hợp, phân công và theo dõi tiến độ do cả nhóm cùng thực hiện.",
+      ],
+      commitment: [
+        "Tôi đóng góp công bằng và ghi nhận đúng phần việc của từng thành viên.",
+        "Bảng công việc và tiến độ phản ánh trung thực đóng góp thực tế của nhóm.",
+        "Không chiếm công hay bỏ sót đóng góp của bất kỳ thành viên nào.",
+      ],
+    },
     analysis: [
       "Công cụ trực tuyến giúp nhóm làm việc minh bạch, dễ kiểm soát tiến độ.",
       "Mỗi thành viên biết rõ nhiệm vụ, tránh trùng lặp hoặc bỏ sót công việc.",
@@ -388,6 +433,17 @@ const PROJECTS: Project[] = [
     tools: ["ChatGPT", "Canva", "CapCut", "Gemini", "DALL·E"],
     tags: ["AI tạo sinh", "Quy trình sản xuất", "Biên tập cá nhân"],
     evidence: "Video ngắn (< 5 phút), infographic hoặc ảnh minh họa sản phẩm AI.",
+    integrity: {
+      usage: [
+        "Dùng AI tạo sinh để hỗ trợ ý tưởng, hình ảnh và bản nháp nội dung.",
+        "Tự biên tập, tinh chỉnh và hoàn thiện sản phẩm cuối theo phong cách riêng.",
+      ],
+      commitment: [
+        "Ghi rõ những phần có sự hỗ trợ của AI trong quá trình sáng tạo.",
+        "Tôi chịu trách nhiệm về nội dung, tính chính xác và bản quyền sản phẩm.",
+        "Sản phẩm cuối là kết quả có chỉnh sửa và đóng góp thực sự của cá nhân.",
+      ],
+    },
     analysis: [
       "AI giúp tăng tốc quá trình lên ý tưởng và sản xuất nội dung.",
       "Người học vẫn cần kiểm duyệt, chỉnh sửa và đảm bảo tính chính xác.",
@@ -430,6 +486,17 @@ const PROJECTS: Project[] = [
     tools: ["Tài liệu học thuật", "Quy định nhà trường", "Nguồn tham khảo chính thống"],
     tags: ["Đạo đức AI", "Liêm chính học thuật", "Tư duy phản biện"],
     evidence: "Ảnh bộ nguyên tắc sử dụng AI cá nhân và ghi chú phân tích đạo đức.",
+    integrity: {
+      usage: [
+        "Nghiên cứu chính sách và tình huống đạo đức khi ứng dụng AI trong học thuật.",
+        "Tự xây dựng bộ nguyên tắc sử dụng AI cá nhân dựa trên phân tích của mình.",
+      ],
+      commitment: [
+        "Cam kết luôn minh bạch khi có sử dụng AI trong học tập và nghiên cứu.",
+        "Không dùng AI để gian lận hay thay thế hoàn toàn tư duy của bản thân.",
+        "Bộ nguyên tắc được tôi tự đúc kết và cam kết áp dụng lâu dài.",
+      ],
+    },
     analysis: [
       "AI mang lại nhiều cơ hội nhưng cũng tạo ra rủi ro về đạo đức học thuật.",
       "Người học cần phát triển năng lực tự đánh giá, phản biện và kiểm chứng.",
@@ -1303,6 +1370,36 @@ function Index() {
                 </div>
               </div>
               {p.extra && <div className="px-6 pb-8 sm:px-8">{p.extra}</div>}
+              {/* Liêm chính học thuật & Sử dụng AI */}
+              <div className="px-6 pb-8 sm:px-8">
+                <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5 sm:p-6">
+                  <p className="flex items-center gap-2 text-sm font-bold text-foreground">
+                    <ShieldCheck className="size-5 text-primary" /> Liêm chính học thuật &amp; Sử dụng AI
+                  </p>
+                  <div className="mt-4 grid gap-6 sm:grid-cols-2">
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">Cách tôi sử dụng AI</p>
+                      <ul className="mt-2 space-y-1.5">
+                        {p.integrity.usage.map((u, i) => (
+                          <li key={i} className="flex gap-2 text-sm text-muted-foreground">
+                            <span className="text-primary">→</span> {u}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">Cam kết liêm chính</p>
+                      <ul className="mt-2 space-y-1.5">
+                        {p.integrity.commitment.map((c, i) => (
+                          <li key={i} className="flex gap-2 text-sm text-muted-foreground">
+                            <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" /> {c}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
               {p.evidenceImages && p.evidenceImages.length > 0 && (
                 <div className="border-t border-border px-6 pb-8 pt-6 sm:px-8">
                   <p className="flex items-center gap-2 text-sm font-bold text-foreground">
