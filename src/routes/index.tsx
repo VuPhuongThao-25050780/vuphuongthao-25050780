@@ -522,13 +522,6 @@ const PROJECTS: Project[] = [
     tools: ["ChatGPT", "OpenArt AI", "Canva AI"],
     tags: ["Đồng sáng tạo Người – AI", "Poster môi trường", "Kiểm soát & biên tập"],
     evidence: "Poster cuối cùng cùng các ảnh chụp giao diện minh chứng quy trình 6 giai đoạn với ChatGPT, OpenArt AI và Canva AI.",
-    evidenceCaptions: [
-      "Poster cuối cùng “Reduce Plastic, Restore Nature” được dựng lại từ tiêu chí của brief",
-      "ChatGPT tạo phương án slogan cho chiến dịch giảm rác thải nhựa",
-      "OpenArt AI sinh các biến thể hình ảnh đối lập để so sánh",
-      "Canva AI thử nhiều bố cục và phân cấp thông tin",
-      "Ví dụ phương án bị loại: “Ocean Conservation Summit” chứa dữ kiện không thuộc brief",
-    ],
     integrity: {
       usage: [
         "Dùng ChatGPT gợi ý thông điệp và slogan; OpenArt AI sinh phương án hình ảnh; Canva AI thử bố cục.",
@@ -1104,7 +1097,7 @@ function Index() {
                     Học tập số & AI
                   </p>
                   <p className="text-sm text-primary-foreground/80">
-                    Hình minh họa (placeholder)
+                    Hành trình 6 dự án thực hành
                   </p>
                 </div>
               </div>
