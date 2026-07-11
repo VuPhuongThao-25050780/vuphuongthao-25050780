@@ -1,6 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import avatarImg from "@/assets/avatar.jpg.asset.json";
+import mc3641 from "@/assets/minhchung1/IMG_3641.jpg.asset.json";
+import mc3642 from "@/assets/minhchung1/IMG_3642.jpg.asset.json";
+import mc3643 from "@/assets/minhchung1/IMG_3643.jpg.asset.json";
+import mc3644 from "@/assets/minhchung1/IMG_3644.jpg.asset.json";
+import mc3645 from "@/assets/minhchung1/IMG_3645.jpg.asset.json";
+import mc3646 from "@/assets/minhchung1/IMG_3646.jpg.asset.json";
+import mc3647 from "@/assets/minhchung1/IMG_3647.jpg.asset.json";
+import mc3648 from "@/assets/minhchung1/IMG_3648.jpg.asset.json";
+import mc3649 from "@/assets/minhchung1/IMG_3649.jpg.asset.json";
+import mc3650 from "@/assets/minhchung1/IMG_3650.jpg.asset.json";
+import mc3651 from "@/assets/minhchung1/IMG_3651.jpg.asset.json";
+import mc3652 from "@/assets/minhchung1/IMG_3652.jpg.asset.json";
+import mc3653 from "@/assets/minhchung1/IMG_3653.jpg.asset.json";
+import mc3654 from "@/assets/minhchung1/IMG_3654.jpg.asset.json";
+import mc3655 from "@/assets/minhchung1/IMG_3655.jpg.asset.json";
+import mc3656 from "@/assets/minhchung1/IMG_3656.jpg.asset.json";
+import mc3657 from "@/assets/minhchung1/IMG_3657.jpg.asset.json";
+
+const EVIDENCE_1: string[] = [
+  mc3641.url, mc3642.url, mc3643.url, mc3644.url, mc3645.url, mc3646.url,
+  mc3647.url, mc3648.url, mc3649.url, mc3650.url, mc3651.url, mc3652.url,
+  mc3653.url, mc3654.url, mc3655.url, mc3656.url, mc3657.url,
+];
 import {
   FolderTree,
   Search,
@@ -109,6 +132,7 @@ type Project = {
   tools: string[];
   tags: string[];
   evidence: string;
+  evidenceImages?: string[];
   analysis: string[];
   lessons: string[];
   extra?: React.ReactNode;
@@ -129,6 +153,7 @@ const PROJECTS: Project[] = [
     tools: ["File Explorer", "Google Drive", "OneDrive"],
     tags: ["Tổ chức dữ liệu", "Đặt tên nhất quán", "Sao lưu đám mây"],
     evidence: "Ảnh chụp màn hình cấu trúc thư mục và sơ đồ cây thư mục môn học.",
+    evidenceImages: EVIDENCE_1,
     analysis: [
       "Cấu trúc phân nhóm giúp dữ liệu dễ tìm, tránh thất lạc và thuận tiện khi nộp bài.",
       "Quy tắc đặt tên phân biệt rõ phiên bản cũ – mới, hỗ trợ làm việc lâu dài và cộng tác.",
@@ -1266,6 +1291,7 @@ function Index() {
                     </ul>
                   </div>
                   {/* Khu vực minh chứng */}
+                  {!p.evidenceImages?.length && (
                   <div className="grid place-items-center rounded-2xl border-2 border-dashed border-border bg-secondary/20 p-6 text-center">
                     <ImageIcon className="size-8 text-muted-foreground" />
                     <p className="mt-2 text-sm font-medium text-foreground">{p.evidence}</p>
@@ -1273,9 +1299,38 @@ function Index() {
                       Thay bằng minh chứng thật (ảnh / file / video)
                     </p>
                   </div>
+                  )}
                 </div>
               </div>
               {p.extra && <div className="px-6 pb-8 sm:px-8">{p.extra}</div>}
+              {p.evidenceImages && p.evidenceImages.length > 0 && (
+                <div className="border-t border-border px-6 pb-8 pt-6 sm:px-8">
+                  <p className="flex items-center gap-2 text-sm font-bold text-foreground">
+                    <ImageIcon className="size-4 text-primary" /> Ảnh minh chứng thực hành
+                    <span className="text-xs font-normal text-muted-foreground">
+                      ({p.evidenceImages.length} ảnh)
+                    </span>
+                  </p>
+                  <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                    {p.evidenceImages.map((src, i) => (
+                      <a
+                        key={i}
+                        href={src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group overflow-hidden rounded-xl border border-border bg-secondary/30 shadow-sm transition hover:shadow-md"
+                      >
+                        <img
+                          src={src}
+                          alt={`Minh chứng bài tập ${p.index} - ảnh ${i + 1}`}
+                          loading="lazy"
+                          className="aspect-video w-full object-cover transition group-hover:scale-105"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
             </article>
           ))}
         </div>
