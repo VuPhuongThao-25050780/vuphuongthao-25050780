@@ -133,6 +133,7 @@ type Project = {
   tags: string[];
   evidence: string;
   evidenceImages?: string[];
+  evidenceCaptions?: string[];
   analysis: string[];
   lessons: string[];
   extra?: React.ReactNode;
