@@ -1012,6 +1012,27 @@ function Index() {
                 </div>
               ))}
             </div>
+            <div className="mt-6">
+              <p className="mb-3 flex items-center gap-2 font-semibold text-foreground">
+                <Target className="size-4 text-brand-pink-strong" /> Kỹ năng cần cải thiện
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Kỹ năng thuyết trình trước đám đông",
+                  "Quản lý thời gian hiệu quả",
+                  "Tiếng Anh chuyên ngành",
+                  "Phân tích dữ liệu nâng cao",
+                  "Làm việc nhóm & lãnh đạo",
+                ].map((s) => (
+                  <span
+                    key={s}
+                    className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
