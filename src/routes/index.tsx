@@ -882,7 +882,6 @@ function Index() {
               {[
                 ["#gioi-thieu", "Giới thiệu"],
                 ["#du-an", "Dự án học tập"],
-                ["#minh-chung", "Minh chứng"],
                 ["#tong-ket", "Tổng kết"],
               ].map(([href, label], i) => (
                 <a
