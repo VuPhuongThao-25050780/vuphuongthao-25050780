@@ -1370,6 +1370,36 @@ function Index() {
                 </div>
               </div>
               {p.extra && <div className="px-6 pb-8 sm:px-8">{p.extra}</div>}
+              {/* Liêm chính học thuật & Sử dụng AI */}
+              <div className="px-6 pb-8 sm:px-8">
+                <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5 sm:p-6">
+                  <p className="flex items-center gap-2 text-sm font-bold text-foreground">
+                    <ShieldCheck className="size-5 text-primary" /> Liêm chính học thuật &amp; Sử dụng AI
+                  </p>
+                  <div className="mt-4 grid gap-6 sm:grid-cols-2">
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">Cách tôi sử dụng AI</p>
+                      <ul className="mt-2 space-y-1.5">
+                        {p.integrity.usage.map((u, i) => (
+                          <li key={i} className="flex gap-2 text-sm text-muted-foreground">
+                            <span className="text-primary">→</span> {u}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">Cam kết liêm chính</p>
+                      <ul className="mt-2 space-y-1.5">
+                        {p.integrity.commitment.map((c, i) => (
+                          <li key={i} className="flex gap-2 text-sm text-muted-foreground">
+                            <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" /> {c}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
               {p.evidenceImages && p.evidenceImages.length > 0 && (
                 <div className="border-t border-border px-6 pb-8 pt-6 sm:px-8">
                   <p className="flex items-center gap-2 text-sm font-bold text-foreground">
