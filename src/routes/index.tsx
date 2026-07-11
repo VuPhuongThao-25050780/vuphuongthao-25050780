@@ -961,7 +961,7 @@ function TaskCell({
  *  TRANG CHÍNH
  * ============================================================ */
 
-function Index() {
+export function Index() {
   useReveal();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
