@@ -136,6 +136,7 @@ type Project = {
   analysis: string[];
   lessons: string[];
   extra?: React.ReactNode;
+  integrity: { usage: string[]; commitment: string[] };
 };
 
 const PROJECTS: Project[] = [
