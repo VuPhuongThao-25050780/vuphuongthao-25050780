@@ -1504,39 +1504,6 @@ function Index() {
                   </div>
                 </div>
               </div>
-              {p.evidenceCaptions && p.evidenceCaptions.length > 0 && (
-                <div className="border-t border-border px-6 pb-8 pt-6 sm:px-8">
-                  <p className="flex items-center gap-2 text-sm font-bold text-foreground">
-                    <ImageIcon className="size-4 text-primary" /> Ảnh minh chứng thực hành
-                    <span className="text-xs font-normal text-muted-foreground">
-                      ({p.evidenceCaptions.length} minh chứng)
-                    </span>
-                  </p>
-                  <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {p.evidenceCaptions.map((cap, i) => (
-                      <figure
-                        key={i}
-                        className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:shadow-md"
-                      >
-                        <div
-                          className="grid aspect-[4/3] place-items-center text-primary-foreground"
-                          style={{ background: "var(--gradient-primary)" }}
-                        >
-                          <div className="text-center opacity-90">
-                            <ImageIcon className="mx-auto size-9" />
-                            <p className="mt-2 text-xs font-semibold">
-                              Minh chứng {i + 1}
-                            </p>
-                          </div>
-                        </div>
-                        <figcaption className="px-3 py-2.5 text-center text-xs font-medium text-primary">
-                          {cap}
-                        </figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                </div>
-              )}
               {p.evidenceImages && p.evidenceImages.length > 0 && (
                 <div className="border-t border-border px-6 pb-8 pt-6 sm:px-8">
                   <p className="flex items-center gap-2 text-sm font-bold text-foreground">
