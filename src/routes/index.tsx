@@ -365,6 +365,8 @@ const PROJECTS: Project[] = [
     tags: ["Prompt Engineering", "So sánh kết quả", "Tư duy cấu trúc"],
     evidence: "Ảnh chụp prompt ban đầu, prompt cải tiến và kết quả AI trả lời.",
     evidenceImages: EVIDENCE_3,
+    fileUrl: baocao3Pdf.url,
+    fileName: "Báo cáo bài 3 (PDF)",
     integrity: {
       usage: [
         "Dùng AI để thử nghiệm và so sánh hiệu quả giữa các phiên bản prompt.",
