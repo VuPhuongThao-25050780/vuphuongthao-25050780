@@ -1413,7 +1413,7 @@ function Index() {
           </span>
           <ChevronRight className="size-4 text-muted-foreground" />
           <span className="flex items-center gap-2 text-sm font-semibold text-foreground">
-            <Rocket className="size-5 text-brand-blue-strong" /> Sẵn sàng cho tương lai
+            <Rocket className="size-5 text-brand-blue" /> Sẵn sàng cho tương lai
           </span>
         </div>
       </section>
