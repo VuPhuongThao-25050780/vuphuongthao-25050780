@@ -524,7 +524,29 @@ function HexIcon({
   );
 }
 
-function TimelineTask({
+function TaskArrow({
+  color,
+  dir,
+}: {
+  color: string;
+  dir: "left" | "right";
+}) {
+  return (
+    <span
+      aria-hidden
+      className="hidden size-0 shrink-0 sm:block"
+      style={{
+        borderTop: "8px solid transparent",
+        borderBottom: "8px solid transparent",
+        ...(dir === "right"
+          ? { borderLeft: `11px solid ${color}` }
+          : { borderRight: `11px solid ${color}` }),
+      }}
+    />
+  );
+}
+
+function TaskContent({
   task,
   num,
   side,
@@ -536,81 +558,83 @@ function TimelineTask({
   const isLeft = side === "left";
   const label = String(num).padStart(2, "0");
   return (
-    <div
-      className={`reveal flex items-start gap-4 sm:gap-6 ${
-        isLeft ? "sm:flex-row-reverse sm:text-right" : "sm:flex-row"
-      }`}
-    >
-      {/* icon lục giác + mũi tên hướng vào trục */}
-      <div className="relative hidden sm:block">
-        <HexIcon Icon={task.icon} color={task.color} />
+    <div className="min-w-0 flex-1">
+      <div
+        className={`flex items-center gap-3 ${
+          isLeft ? "" : "sm:flex-row-reverse"
+        }`}
+      >
+        <span
+          className="font-display text-4xl font-extrabold leading-none tracking-tight sm:text-5xl"
+          style={{ color: task.color }}
+        >
+          {label}
+        </span>
+        <span
+          className="h-9 w-px opacity-70"
+          style={{ backgroundColor: task.color }}
+          aria-hidden
+        />
       </div>
 
-      {/* khối nội dung */}
-      <div className={`flex-1 ${isLeft ? "sm:items-end" : ""}`}>
-        <div
-          className={`flex items-center gap-3 ${
-            isLeft ? "sm:flex-row-reverse" : ""
-          }`}
-        >
-          <span
-            className="font-display text-4xl font-extrabold leading-none tracking-tight"
-            style={{ color: task.color }}
-          >
-            {label}
+      <h3 className="mt-3 font-display text-xl font-bold leading-snug text-[#0B1748]">
+        {task.titleLines.map((l) => (
+          <span key={l} className="block">
+            {l}
           </span>
+        ))}
+      </h3>
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+        {task.desc}
+      </p>
+
+      <div className="mt-4">
+        <div className="mb-1.5 flex items-center justify-between text-xs font-medium text-muted-foreground">
+          <span>Mức độ hoàn thành</span>
+          <span className="font-bold" style={{ color: task.color }}>
+            {task.progress}%
+          </span>
+        </div>
+        <div className="relative h-1.5 w-full rounded-full bg-secondary">
+          <div
+            className="h-full rounded-full"
+            style={{
+              width: `${task.progress}%`,
+              backgroundColor: task.color,
+            }}
+          />
           <span
-            className="h-9 w-px"
-            style={{ backgroundColor: task.color }}
+            className="absolute top-1/2 size-3 -translate-y-1/2 rounded-full border-2 bg-card"
+            style={{ right: 0, borderColor: task.color }}
             aria-hidden
           />
-          <span className="sm:hidden">
-            <HexIcon Icon={task.icon} color={task.color} />
-          </span>
-        </div>
-
-        <h3 className="mt-3 font-display text-xl font-bold leading-snug text-foreground">
-          {task.titleLines.map((l) => (
-            <span key={l} className="block">
-              {l}
-            </span>
-          ))}
-        </h3>
-        <p
-          className={`mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground ${
-            isLeft ? "sm:ml-auto" : ""
-          }`}
-        >
-          {task.desc}
-        </p>
-
-        <div className={`mt-4 max-w-xs ${isLeft ? "sm:ml-auto" : ""}`}>
-          <div
-            className={`mb-1.5 flex items-center justify-between text-xs font-medium text-muted-foreground ${
-              isLeft ? "sm:flex-row-reverse" : ""
-            }`}
-          >
-            <span>Mức độ hoàn thành</span>
-            <span className="font-bold" style={{ color: task.color }}>
-              {task.progress}%
-            </span>
-          </div>
-          <div className="relative h-1.5 w-full rounded-full bg-secondary">
-            <div
-              className="h-full rounded-full"
-              style={{
-                width: `${task.progress}%`,
-                backgroundColor: task.color,
-              }}
-            />
-            <span
-              className="absolute top-1/2 size-3 -translate-y-1/2 rounded-full border-2 bg-card"
-              style={{ right: 0, borderColor: task.color }}
-              aria-hidden
-            />
-          </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function TaskCell({
+  task,
+  num,
+  side,
+}: {
+  task: (typeof TASKS)[number];
+  num: number;
+  side: "left" | "right";
+}) {
+  const isLeft = side === "left";
+  return (
+    <div
+      className={`reveal flex items-center gap-4 sm:gap-5 ${
+        isLeft ? "sm:pr-6" : "sm:flex-row-reverse sm:pl-6"
+      }`}
+    >
+      <TaskContent task={task} num={num} side={side} />
+      <div className="hidden sm:block">
+        <HexIcon Icon={task.icon} color={task.color} />
+      </div>
+      <TaskArrow color={task.color} dir={isLeft ? "right" : "left"} />
     </div>
   );
 }
