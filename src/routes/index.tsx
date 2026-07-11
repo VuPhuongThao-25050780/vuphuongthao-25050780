@@ -155,6 +155,17 @@ const PROJECTS: Project[] = [
     tags: ["Tổ chức dữ liệu", "Đặt tên nhất quán", "Sao lưu đám mây"],
     evidence: "Ảnh chụp màn hình cấu trúc thư mục và sơ đồ cây thư mục môn học.",
     evidenceImages: EVIDENCE_1,
+    integrity: {
+      usage: [
+        "Không sử dụng AI trong bài tập này.",
+        "Tự thực hành trực tiếp trên máy tính theo hướng dẫn của giảng viên.",
+      ],
+      commitment: [
+        "Tôi đã tự thực hiện tất cả thao tác tạo, đổi tên, sao chép và sắp xếp thư mục.",
+        "Ảnh chụp màn hình là minh chứng thực tế từ quá trình thực hành.",
+        "Toàn bộ cấu trúc dữ liệu được xây dựng dựa trên trải nghiệm cá nhân.",
+      ],
+    },
     analysis: [
       "Cấu trúc phân nhóm giúp dữ liệu dễ tìm, tránh thất lạc và thuận tiện khi nộp bài.",
       "Quy tắc đặt tên phân biệt rõ phiên bản cũ – mới, hỗ trợ làm việc lâu dài và cộng tác.",
