@@ -1044,8 +1044,6 @@ function Index() {
         className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28"
         style={{ background: "var(--gradient-hero)" }}
       >
-        <div className="pointer-events-none absolute -left-24 top-10 size-72 rounded-full bg-brand-pink/40 blur-3xl" />
-        <div className="pointer-events-none absolute -right-24 bottom-0 size-80 rounded-full bg-brand-blue-soft/40 blur-3xl" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="reveal is-visible">
             <span className="inline-flex items-center gap-2 rounded-full bg-card/70 px-4 py-1.5 text-xs font-semibold text-primary shadow-sm backdrop-blur">
