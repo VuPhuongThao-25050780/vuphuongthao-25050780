@@ -340,9 +340,11 @@ const PROJECTS: Project[] = [
     title: "Bài tập 3 – Viết Prompt hiệu quả cho các tác vụ học tập",
     goal: "Rèn kỹ năng viết prompt để khai thác tối đa mô hình ngôn ngữ lớn (LLM), qua việc so sánh 3 mức prompt: cơ bản – cải tiến – nâng cao.",
     process: [
-      "Thực hiện 3 tác vụ: tóm tắt tài liệu học thuật, giải thích khái niệm phức tạp, tạo câu hỏi ôn tập.",
-      "Mỗi tác vụ viết 3 phiên bản prompt: cơ bản (một câu ngắn), cải tiến (thêm ràng buộc, định dạng), nâng cao (gán vai trò, từng bước, tiêu chí).",
-      "So sánh chất lượng đầu ra và rút ra nguyên tắc viết prompt hiệu quả.",
+      "Chọn 3 tác vụ học tập tiêu biểu: tóm tắt tài liệu học thuật, giải thích khái niệm phức tạp và tạo câu hỏi ôn tập.",
+      "Với mỗi tác vụ, viết prompt mức cơ bản (một câu ngắn, chưa ràng buộc) và ghi lại kết quả AI trả về.",
+      "Cải tiến prompt: thêm ngữ cảnh, ràng buộc độ dài, yêu cầu định dạng (bảng, gạch đầu dòng) và đối tượng người đọc.",
+      "Nâng cao prompt: gán vai trò cho AI (chuyên gia, giảng viên), yêu cầu suy luận từng bước và nêu tiêu chí đánh giá đầu ra.",
+      "So sánh 3 mức kết quả theo các tiêu chí độ rõ ràng, độ chi tiết, tính hữu ích và mức kiểm soát; rút ra nguyên tắc viết prompt hiệu quả.",
     ],
     tools: ["ChatGPT", "Gemini", "Claude"],
     tags: ["Prompt Engineering", "So sánh kết quả", "Tư duy cấu trúc"],
@@ -372,6 +374,19 @@ const PROJECTS: Project[] = [
     lessons: [
       "Prompt càng rõ ràng, có cấu trúc và định hướng cụ thể thì kết quả càng chất lượng.",
       "Nguyên tắc: rõ ràng – đặt vai trò – thêm ràng buộc – yêu cầu cấu trúc – dùng ví dụ – chia nhỏ nhiệm vụ.",
+    ],
+    analysis: [
+      "Prompt nâng cao cho kết quả tốt nhất nhờ có vai trò (role), cấu trúc rõ ràng và hướng dẫn định dạng đầu ra cụ thể.",
+      "Prompt cơ bản quá chung chung, không kiểm soát được độ dài và nội dung nên dễ lan man, thiếu chính xác.",
+      "Cùng một tác vụ, chất lượng đầu ra chênh lệch rõ rệt giữa 3 mức prompt — chứng tỏ cách hỏi quan trọng ngang với công cụ.",
+      "Các kỹ thuật quyết định chất lượng: role prompting, chia nhỏ theo từng bước (step-by-step), đặt ràng buộc (constraint), yêu cầu định dạng và cung cấp ví dụ mẫu.",
+      "AI phản hồi tốt hơn khi được nêu rõ đối tượng người đọc và mục tiêu sử dụng của kết quả.",
+    ],
+    lessons: [
+      "Prompt càng rõ ràng, có cấu trúc và định hướng cụ thể thì kết quả càng chất lượng và đáng tin cậy.",
+      "Nguyên tắc viết prompt hiệu quả: rõ ràng – đặt vai trò – thêm ràng buộc – yêu cầu cấu trúc – dùng ví dụ – chia nhỏ nhiệm vụ.",
+      "Nên xem việc viết prompt là một quá trình lặp: thử – đánh giá – cải tiến thay vì kỳ vọng đúng ngay lần đầu.",
+      "Người học vẫn phải kiểm chứng và chọn lọc kết quả AI, không phụ thuộc hoàn toàn vào đầu ra máy sinh.",
     ],
     extra: (
       <div className="mt-5 overflow-x-auto rounded-2xl border border-border">
