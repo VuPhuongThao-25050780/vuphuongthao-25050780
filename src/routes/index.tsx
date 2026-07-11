@@ -21,7 +21,6 @@ import {
   CheckCircle2,
   Quote,
   BookOpen,
-  Send,
   TrendingUp,
 } from "lucide-react";
 import { BarChart3, RefreshCw, Brain, Rocket } from "lucide-react";
@@ -1038,103 +1037,23 @@ function Index() {
       </section>
 
       {/* ===================== TỔNG QUAN / TIMELINE ===================== */}
-      <section
-        id="tong-quan"
-        className="relative overflow-hidden py-20 sm:py-28"
-        style={{
-          background:
-            "linear-gradient(180deg, oklch(0.99 0.008 300), oklch(0.985 0.014 290))",
-        }}
-      >
-        {/* ---- Họa tiết nền trang trí ---- */}
-        <div aria-hidden className="pointer-events-none absolute inset-0">
-          {/* vòng tròn gradient góc trên trái */}
-          <div
-            className="absolute -left-24 -top-24 size-64 rounded-full opacity-30"
-            style={{
-              background:
-                "conic-gradient(from 90deg, #EB168C, #8B46E8, #2463EB, #EB168C)",
-              WebkitMask: "radial-gradient(farthest-side, transparent 62%, #000 64%)",
-              mask: "radial-gradient(farthest-side, transparent 62%, #000 64%)",
-            }}
-          />
-          {/* mảng gradient góc trên phải */}
-          <div
-            className="absolute -right-20 -top-16 size-72 rounded-full blur-3xl opacity-40"
-            style={{
-              background:
-                "radial-gradient(circle, rgba(235,22,140,0.18), rgba(139,70,232,0.10), transparent 70%)",
-            }}
-          />
-          {/* máy bay giấy + đường bay */}
-          <svg
-            className="absolute right-10 top-28 hidden opacity-60 lg:block"
-            width="150"
-            height="90"
-            viewBox="0 0 150 90"
-            fill="none"
-          >
-            <path
-              d="M2 80 C 40 70, 60 40, 120 20"
-              stroke="#8B46E8"
-              strokeWidth="1.5"
-              strokeDasharray="4 5"
-              fill="none"
-            />
-          </svg>
-          <Send
-            className="absolute right-6 top-16 hidden size-8 -rotate-12 text-[#2463EB] opacity-70 lg:block"
-            strokeWidth={1.5}
-          />
-          {/* ngôi sao nhỏ */}
-          <Sparkles className="absolute left-[18%] top-40 size-4 text-[#EB168C] opacity-50" />
-          <Sparkles className="absolute right-[22%] bottom-40 size-5 text-[#8B46E8] opacity-40" />
-          {/* cụm chấm góc trên trái */}
-          <div className="absolute left-8 top-40 grid grid-cols-4 gap-2 opacity-40">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <span
-                key={i}
-                className="size-1.5 rounded-full"
-                style={{ backgroundColor: i % 2 ? "#8B46E8" : "#2463EB" }}
-              />
-            ))}
-          </div>
-          {/* sóng góc dưới trái */}
-          <svg
-            className="absolute -left-4 bottom-10 opacity-30"
-            width="160"
-            height="60"
-            viewBox="0 0 160 60"
-            fill="none"
-          >
-            <path d="M0 20 Q 20 5, 40 20 T 80 20 T 120 20 T 160 20" stroke="#10A9AE" strokeWidth="1.5" fill="none" />
-            <path d="M0 40 Q 20 25, 40 40 T 80 40 T 120 40 T 160 40" stroke="#EB168C" strokeWidth="1.5" fill="none" />
-          </svg>
-          {/* cụm chấm góc dưới phải */}
-          <div className="absolute bottom-24 right-10 grid grid-cols-4 gap-2 opacity-40">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <span
-                key={i}
-                className="size-1.5 rounded-full"
-                style={{ backgroundColor: i % 2 ? "#EB168C" : "#8B46E8" }}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="relative mx-auto max-w-5xl px-5">
-          {/* ---- Đầu mục ---- */}
-          <div className="reveal mx-auto max-w-3xl text-center">
-            <div className="inline-flex items-center gap-2.5">
-              <span className="size-1.5 rounded-full bg-[#8B46E8]" />
-              <span className="size-2 rounded-full bg-[#EB168C]" />
-              <BookOpen className="size-4 text-[#EB168C]" strokeWidth={2} />
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#EB168C]">
-                Hành trình học tập
-              </span>
-              <span className="size-2 rounded-full bg-[#EB168C]" />
-              <span className="size-1.5 rounded-full bg-[#8B46E8]" />
-            </div>
+       <section
+         id="tong-quan"
+         className="relative overflow-hidden py-20 sm:py-28"
+         style={{
+           background:
+             "linear-gradient(180deg, oklch(0.99 0.008 300), oklch(0.985 0.014 290))",
+         }}
+       >
+         <div className="relative mx-auto max-w-5xl px-5">
+           {/* ---- Đầu mục ---- */}
+           <div className="reveal mx-auto max-w-3xl text-center">
+             <div className="inline-flex items-center gap-2">
+               <BookOpen className="size-4 text-[#EB168C]" strokeWidth={2} />
+               <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#EB168C]">
+                 Hành trình học tập
+               </span>
+             </div>
 
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-tight text-[#0B1748] sm:text-5xl">
               Tổng quan{" "}
@@ -1153,17 +1072,6 @@ function Index() {
               Sơ đồ hành trình rèn luyện năng lực số qua sáu nhiệm vụ, mỗi nhiệm
               vụ là một bước trưởng thành.
             </p>
-            <div className="mt-6 flex items-center justify-center gap-2">
-              <span className="size-1.5 rounded-full bg-[#EB168C]" />
-              <span
-                className="h-0.5 w-28 rounded-full"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #EB168C, #8B46E8, #2463EB)",
-                }}
-              />
-              <span className="size-1.5 rounded-full bg-[#2463EB]" />
-            </div>
           </div>
 
           {/* ---- Sơ đồ 2 cột + trục trung tâm ---- */}
