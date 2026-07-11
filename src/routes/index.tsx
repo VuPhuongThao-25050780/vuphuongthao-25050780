@@ -1301,6 +1301,34 @@ function Index() {
                 </div>
               </div>
               {p.extra && <div className="px-6 pb-8 sm:px-8">{p.extra}</div>}
+              {p.evidenceImages && p.evidenceImages.length > 0 && (
+                <div className="border-t border-border px-6 pb-8 pt-6 sm:px-8">
+                  <p className="flex items-center gap-2 text-sm font-bold text-foreground">
+                    <ImageIcon className="size-4 text-primary" /> Ảnh minh chứng thực hành
+                    <span className="text-xs font-normal text-muted-foreground">
+                      ({p.evidenceImages.length} ảnh)
+                    </span>
+                  </p>
+                  <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                    {p.evidenceImages.map((src, i) => (
+                      <a
+                        key={i}
+                        href={src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group overflow-hidden rounded-xl border border-border bg-secondary/30 shadow-sm transition hover:shadow-md"
+                      >
+                        <img
+                          src={src}
+                          alt={`Minh chứng bài tập ${p.index} - ảnh ${i + 1}`}
+                          loading="lazy"
+                          className="aspect-video w-full object-cover transition group-hover:scale-105"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
             </article>
           ))}
         </div>
