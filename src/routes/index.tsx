@@ -520,15 +520,6 @@ const PROJECTS: Project[] = [
       ],
     },
     analysis: [
-      "AI giúp tăng tốc quá trình lên ý tưởng và sản xuất nội dung.",
-      "Người học vẫn cần kiểm duyệt, chỉnh sửa và đảm bảo tính chính xác.",
-      "Sản phẩm tốt là sự kết hợp giữa năng lực con người và công cụ AI.",
-    ],
-    lessons: [
-      "AI là công cụ hỗ trợ sáng tạo, không thay thế hoàn toàn tư duy cá nhân.",
-      "Cần biết chọn lọc, biên tập và chịu trách nhiệm với nội dung mình tạo ra.",
-    ],
-    analysis: [
       "AI giúp rút ngắn đáng kể thời gian lên ý tưởng, viết bản nháp và tạo hình ảnh minh họa.",
       "Đầu ra của AI thường cần chỉnh sửa: câu chữ đôi khi cứng, hình ảnh có chi tiết sai hoặc chưa đúng thông điệp.",
       "Người học vẫn phải kiểm duyệt, đối chiếu độ chính xác và đảm bảo không vi phạm bản quyền.",
