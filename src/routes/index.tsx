@@ -486,6 +486,17 @@ const PROJECTS: Project[] = [
     tools: ["Tài liệu học thuật", "Quy định nhà trường", "Nguồn tham khảo chính thống"],
     tags: ["Đạo đức AI", "Liêm chính học thuật", "Tư duy phản biện"],
     evidence: "Ảnh bộ nguyên tắc sử dụng AI cá nhân và ghi chú phân tích đạo đức.",
+    integrity: {
+      usage: [
+        "Nghiên cứu chính sách và tình huống đạo đức khi ứng dụng AI trong học thuật.",
+        "Tự xây dựng bộ nguyên tắc sử dụng AI cá nhân dựa trên phân tích của mình.",
+      ],
+      commitment: [
+        "Cam kết luôn minh bạch khi có sử dụng AI trong học tập và nghiên cứu.",
+        "Không dùng AI để gian lận hay thay thế hoàn toàn tư duy của bản thân.",
+        "Bộ nguyên tắc được tôi tự đúc kết và cam kết áp dụng lâu dài.",
+      ],
+    },
     analysis: [
       "AI mang lại nhiều cơ hội nhưng cũng tạo ra rủi ro về đạo đức học thuật.",
       "Người học cần phát triển năng lực tự đánh giá, phản biện và kiểm chứng.",
