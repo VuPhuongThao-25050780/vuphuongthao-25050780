@@ -42,6 +42,16 @@ import mc4_4 from "@/assets/minhchung4/b4_04.png.asset.json";
 import mc4_5 from "@/assets/minhchung4/b4_05.png.asset.json";
 import mc6_1 from "@/assets/minhchung6/b6_01.jpg.asset.json";
 import mc6_2 from "@/assets/minhchung6/b6_02.jpg.asset.json";
+import mc3n_1 from "@/assets/minhchung3new/b3n_01.png.asset.json";
+import mc3n_2 from "@/assets/minhchung3new/b3n_02.png.asset.json";
+import mc3n_3 from "@/assets/minhchung3new/b3n_03.png.asset.json";
+import mc3n_4 from "@/assets/minhchung3new/b3n_04.png.asset.json";
+import mc3n_5 from "@/assets/minhchung3new/b3n_05.png.asset.json";
+import mc3n_6 from "@/assets/minhchung3new/b3n_06.png.asset.json";
+import mc3n_7 from "@/assets/minhchung3new/b3n_07.png.asset.json";
+import mc3n_8 from "@/assets/minhchung3new/b3n_08.png.asset.json";
+import mc3n_9 from "@/assets/minhchung3new/b3n_09.png.asset.json";
+import baocao3Pdf from "@/assets/minhchung3new/baocao3.pdf.asset.json";
 
 const EVIDENCE_1: string[] = [
   mc3641.url, mc3642.url, mc3643.url, mc3644.url, mc3645.url, mc3646.url,
@@ -55,6 +65,8 @@ const EVIDENCE_2: string[] = [
 const EVIDENCE_3: string[] = [
   mc3_1.url, mc3_2.url, mc3_3.url, mc3_4.url, mc3_5.url,
   mc3_6.url, mc3_7.url, mc3_8.url, mc3_9.url,
+  mc3n_1.url, mc3n_2.url, mc3n_3.url, mc3n_4.url, mc3n_5.url,
+  mc3n_6.url, mc3n_7.url, mc3n_8.url, mc3n_9.url,
 ];
 const EVIDENCE_4: string[] = [mc4_1.url, mc4_2.url, mc4_3.url, mc4_4.url, mc4_5.url];
 const EVIDENCE_6: string[] = [mc6_1.url, mc6_2.url];
@@ -353,6 +365,8 @@ const PROJECTS: Project[] = [
     tags: ["Prompt Engineering", "So sánh kết quả", "Tư duy cấu trúc"],
     evidence: "Ảnh chụp prompt ban đầu, prompt cải tiến và kết quả AI trả lời.",
     evidenceImages: EVIDENCE_3,
+    fileUrl: baocao3Pdf.url,
+    fileName: "Báo cáo bài 3 (PDF)",
     integrity: {
       usage: [
         "Dùng AI để thử nghiệm và so sánh hiệu quả giữa các phiên bản prompt.",
