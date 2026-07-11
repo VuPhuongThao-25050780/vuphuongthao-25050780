@@ -440,7 +440,7 @@ const PROJECTS: Project[] = [
         <table className="w-full min-w-[620px] text-left text-sm">
           <thead className="bg-secondary/50 text-secondary-foreground">
             <tr>
-              {["Thành viên", "Nhiệm vụ", "Hạn hoàn thành", "Trạng thái", "Ghi chú"].map((h) => (
+              {["Công cụ", "Vai trò trong dự án", "Đóng góp cá nhân", "Hiệu quả"].map((h) => (
                 <th key={h} className="px-4 py-3 font-semibold">
                   {h}
                 </th>
@@ -449,10 +449,10 @@ const PROJECTS: Project[] = [
           </thead>
           <tbody className="divide-y divide-border">
             {[
-              ["Thành viên A", "Thu thập tài liệu", "10/03", "Hoàn thành", "Đã kiểm chứng nguồn"],
-              ["Thành viên B", "Thiết kế nội dung", "14/03", "Đang làm", "Bản nháp v1"],
-              ["Thành viên C", "Tổng hợp báo cáo", "16/03", "Chưa làm", "Chờ nội dung"],
-              ["Thành viên D", "Rà soát & trình bày", "18/03", "Cần chỉnh sửa", "Bổ sung trích dẫn"],
+              ["Trello", "Quản lý công việc", "Lập danh sách & cập nhật trạng thái nhiệm vụ", "Kiểm soát tiến độ"],
+              ["Google Docs", "Soạn thảo tài liệu", "Viết phần 2–4, góp ý qua comment", "Cộng tác nhanh"],
+              ["Microsoft Teams", "Giao tiếp nhóm", "Thảo luận, nhắc tiến độ, đề xuất giải pháp", "Giảm độ trễ"],
+              ["Google Drive", "Lưu trữ dữ liệu", "Tạo thư mục, đặt tên file khoa học", "Dễ tìm kiếm"],
             ].map((row) => (
               <tr key={row[0]} className="bg-card">
                 <td className="px-4 py-3 font-medium text-foreground">{row[0]}</td>
@@ -463,7 +463,6 @@ const PROJECTS: Project[] = [
                     {row[3]}
                   </span>
                 </td>
-                <td className="px-4 py-3 text-muted-foreground">{row[4]}</td>
               </tr>
             ))}
           </tbody>
