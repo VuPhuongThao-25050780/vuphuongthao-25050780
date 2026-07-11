@@ -1563,7 +1563,7 @@ function Index() {
             <div className="text-sm">
               <p className="font-semibold text-foreground">Thông tin</p>
               <ul className="mt-3 space-y-1.5 text-muted-foreground">
-                <li>Sinh viên: [Điền tên của bạn]</li>
+                <li>Sinh viên: Vũ Phương Thảo</li>
                 <li>Môn: Nhập môn Công nghệ số & AI</li>
                 <li>Năm học: 2025 – 2026</li>
               </ul>
@@ -1572,7 +1572,10 @@ function Index() {
               <p className="font-semibold text-foreground">Liên hệ</p>
               <ul className="mt-3 space-y-1.5 text-muted-foreground">
                 <li className="flex items-center gap-2">
-                  <Mail className="size-4" /> email@example.com
+                  <Mail className="size-4" /> 25050780@vnu.edu.vn
+                </li>
+                <li className="flex items-center gap-2">
+                  <Target className="size-4" /> MSV: 25050780
                 </li>
               </ul>
             </div>
