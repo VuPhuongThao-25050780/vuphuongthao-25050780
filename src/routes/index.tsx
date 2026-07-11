@@ -132,6 +132,7 @@ type Project = {
   tools: string[];
   tags: string[];
   evidence: string;
+  evidenceImages?: string[];
   analysis: string[];
   lessons: string[];
   extra?: React.ReactNode;
