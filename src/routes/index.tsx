@@ -800,7 +800,7 @@ function Index() {
             >
               <Sparkles className="size-5" />
             </span>
-            <span className="truncate font-display text-lg font-bold">Portfolio số</span>
+            <span className="truncate font-display text-lg font-bold">Digital Portfolio&nbsp;</span>
           </a>
           <div className="hidden items-center gap-1 md:flex">
             {NAV.map((n) => (
@@ -943,9 +943,9 @@ function Index() {
             </p>
             <dl className="mt-6 space-y-3 text-sm">
               {[
-                ["Họ và tên", "[Điền tên của bạn]"],
-                ["Ngành học", "[Điền ngành học]"],
-                ["Trường / Lớp", "[Điền trường/lớp]"],
+                ["Họ và tên", "Vũ Phương Thảo"],
+                ["Trường", "Đại Học Kinh Tế- ĐHQGHN"],
+                ["Khoa\u00a0", "Khoa Kinh Tế Phát Triển"],
               ].map(([k, v]) => (
                 <div key={k} className="flex items-center justify-between gap-3 border-b border-border pb-2">
                   <dt className="text-muted-foreground">{k}</dt>
