@@ -162,7 +162,7 @@ const TASKS = [
   {
     icon: Sparkles,
     title: "Sáng tạo nội dung với AI",
-    desc: "Sản xuất sản phẩm số hoàn chỉnh với quy trình con người – AI kết hợp.",
+    desc: "Đồng sáng tạo poster môi trường “Reduce Plastic, Restore Nature” với ChatGPT, OpenArt AI và Canva AI.",
     progress: 100,
     href: "#du-an-5",
     color: "#FF7A00",
