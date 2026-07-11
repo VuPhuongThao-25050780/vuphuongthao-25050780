@@ -585,15 +585,6 @@ const PROJECTS: Project[] = [
       ],
     },
     analysis: [
-      "Ranh giới hỗ trợ hợp lý và gian lận nằm ở mức độ AI can thiệp vào tư duy người học.",
-      "Sao chép nguyên văn AI là “đạo văn của đạo văn” vì AI không ghi nguồn chính xác.",
-      "Lạm dụng AI làm mất năng lực lập luận độc lập; dùng đúng cách lại nâng cao hiệu suất học tập.",
-    ],
-    lessons: [
-      "AI không phải mối đe dọa mà là bài kiểm tra năng lực và bản lĩnh của người học.",
-      "Làm chủ AI có trách nhiệm: minh bạch – trung thực – kiểm chứng – chịu trách nhiệm.",
-    ],
-    analysis: [
       "Ranh giới giữa hỗ trợ hợp lý và gian lận nằm ở mức độ AI can thiệp vào tư duy của người học.",
       "Sao chép nguyên văn AI là “đạo văn của đạo văn” vì AI không ghi nguồn chính xác và có thể sai lệch thông tin.",
       "Lạm dụng AI làm mất dần năng lực lập luận độc lập; ngược lại, dùng đúng cách sẽ nâng cao hiệu suất học tập.",
