@@ -305,19 +305,19 @@ const PROJECTS: Project[] = [
     index: 3,
     icon: MessageSquareText,
     title: "Bài tập 3 – Viết Prompt hiệu quả cho các tác vụ học tập",
-    goal: "Biết cách viết prompt rõ ràng để AI trả lời đúng yêu cầu, đúng định dạng và phù hợp mục tiêu học tập.",
+    goal: "Rèn kỹ năng viết prompt để khai thác tối đa mô hình ngôn ngữ lớn (LLM), qua việc so sánh 3 mức prompt: cơ bản – cải tiến – nâng cao.",
     process: [
-      "Viết một prompt ban đầu còn chung chung, thiếu bối cảnh.",
-      "Viết prompt cải tiến có đầy đủ vai trò, bối cảnh, yêu cầu, định dạng đầu ra và tiêu chí đánh giá.",
-      "So sánh kết quả giữa hai prompt và rút ra nhận xét.",
+      "Thực hiện 3 tác vụ: tóm tắt tài liệu học thuật, giải thích khái niệm phức tạp, tạo câu hỏi ôn tập.",
+      "Mỗi tác vụ viết 3 phiên bản prompt: cơ bản (một câu ngắn), cải tiến (thêm ràng buộc, định dạng), nâng cao (gán vai trò, từng bước, tiêu chí).",
+      "So sánh chất lượng đầu ra và rút ra nguyên tắc viết prompt hiệu quả.",
     ],
     tools: ["ChatGPT", "Gemini", "Claude"],
     tags: ["Prompt Engineering", "So sánh kết quả", "Tư duy cấu trúc"],
     evidence: "Ảnh chụp prompt ban đầu, prompt cải tiến và kết quả AI trả lời.",
     evidenceCaptions: [
-      "Prompt ban đầu còn chung chung, thiếu bối cảnh",
-      "Prompt cải tiến đầy đủ vai trò, bối cảnh, yêu cầu",
-      "Kết quả AI trả lời cho hai phiên bản prompt",
+      "3 mức prompt cho tác vụ tóm tắt tài liệu học thuật",
+      "Kết quả AI giải thích khái niệm “trí tuệ nhân tạo” theo prompt nâng cao",
+      "Bộ câu hỏi ôn tập được AI tạo theo mức độ dễ – trung bình – khó",
     ],
     integrity: {
       usage: [
@@ -331,20 +331,20 @@ const PROJECTS: Project[] = [
       ],
     },
     analysis: [
-      "Prompt cải tiến giúp AI hiểu rõ vai trò, phạm vi, mục tiêu và cách trình bày.",
-      "Yêu cầu càng cụ thể, kết quả càng có cấu trúc, ít sai lệch và bám sát mục đích.",
-      "AI phản hồi dựa trên ngữ cảnh và độ cụ thể của yêu cầu, nên chi tiết đầu vào quyết định chất lượng đầu ra.",
+      "Prompt nâng cao hiệu quả nhờ có vai trò (role), cấu trúc rõ ràng và hướng dẫn định dạng đầu ra.",
+      "Prompt cơ bản quá chung chung, không kiểm soát được độ dài, nội dung nên dễ thiếu chính xác.",
+      "Kỹ thuật prompt engineering: role prompting, step-by-step, ràng buộc (constraint) và formatting quyết định chất lượng.",
     ],
     lessons: [
-      "Muốn AI trả lời tốt cần đặt câu hỏi tốt.",
-      "Prompt hiệu quả phải rõ vai trò, bối cảnh, nhiệm vụ, tiêu chí và định dạng.",
+      "Prompt càng rõ ràng, có cấu trúc và định hướng cụ thể thì kết quả càng chất lượng.",
+      "Nguyên tắc: rõ ràng – đặt vai trò – thêm ràng buộc – yêu cầu cấu trúc – dùng ví dụ – chia nhỏ nhiệm vụ.",
     ],
     extra: (
       <div className="mt-5 overflow-x-auto rounded-2xl border border-border">
         <table className="w-full min-w-[640px] text-left text-sm">
           <thead className="bg-secondary/50 text-secondary-foreground">
             <tr>
-              {["Tiêu chí", "Prompt ban đầu", "Prompt cải tiến", "Nhận xét"].map((h) => (
+              {["Tiêu chí", "Prompt cơ bản", "Prompt cải tiến", "Prompt nâng cao"].map((h) => (
                 <th key={h} className="px-4 py-3 font-semibold">
                   {h}
                 </th>
@@ -353,12 +353,10 @@ const PROJECTS: Project[] = [
           </thead>
           <tbody className="divide-y divide-border">
             {[
-              ["Độ rõ ràng", "Mơ hồ, một câu ngắn", "Nêu rõ mục tiêu và phạm vi", "Cải tiến rõ ràng hơn hẳn"],
-              ["Vai trò", "Không xác định", "Gán vai trò chuyên gia", "AI trả lời chuyên sâu hơn"],
-              ["Bối cảnh", "Thiếu", "Đầy đủ bối cảnh học tập", "Kết quả sát nhu cầu"],
-              ["Định dạng đầu ra", "Tự do", "Yêu cầu bảng / gạch đầu dòng", "Dễ đọc, dễ dùng lại"],
-              ["Mức độ chính xác", "Chung chung", "Có tiêu chí đánh giá", "Ít sai lệch hơn"],
-              ["Khả năng kiểm soát", "Thấp", "Cao", "Chủ động điều chỉnh kết quả"],
+              ["Độ rõ ràng", "Thấp", "Trung bình", "Cao"],
+              ["Độ chi tiết", "Ít", "Khá", "Rất cao"],
+              ["Tính hữu ích", "Trung bình", "Tốt", "Rất tốt"],
+              ["Kiểm soát kết quả", "Thấp", "Trung bình", "Cao"],
             ].map((row) => (
               <tr key={row[0]} className="bg-card">
                 <td className="px-4 py-3 font-medium text-foreground">{row[0]}</td>
@@ -510,39 +508,39 @@ const PROJECTS: Project[] = [
     index: 6,
     icon: ShieldCheck,
     title: "Bài tập 6 – Sử dụng AI có trách nhiệm trong học tập và nghiên cứu",
-    goal: "Hiểu các vấn đề đạo đức khi sử dụng AI và xây dựng bộ nguyên tắc cá nhân sử dụng AI có trách nhiệm.",
+    goal: "Nghiên cứu chính sách sử dụng AI của trường, phân tích các vấn đề đạo đức và xây dựng bộ nguyên tắc cá nhân sử dụng AI có trách nhiệm.",
     process: [
-      "Tìm hiểu chính sách sử dụng AI trong môi trường học thuật.",
-      "Phân tích các vấn đề: đạo văn, phụ thuộc AI, sai lệch thông tin, quyền riêng tư, thiên kiến thuật toán.",
-      "Xây dựng bộ nguyên tắc sử dụng AI cá nhân và cam kết áp dụng.",
+      "Tìm hiểu chính sách AI của ĐHQGHN và các trường: cho phép AI hỗ trợ nhưng cấm thay thế tư duy, bắt buộc minh bạch (AI disclosure).",
+      "Thực hiện bài luận “Thách thức của công nghệ số với giáo dục đại học” có sử dụng AI hỗ trợ dàn ý và hiệu đính.",
+      "Phân tích vấn đề đạo đức, xây dựng bộ nguyên tắc cá nhân và thiết kế infographic tuyên truyền.",
     ],
-    tools: ["Tài liệu học thuật", "Quy định nhà trường", "Nguồn tham khảo chính thống"],
+    tools: ["ChatGPT", "Quy định ĐHQGHN", "Tài liệu học thuật", "Canva (infographic)"],
     tags: ["Đạo đức AI", "Liêm chính học thuật", "Tư duy phản biện"],
     evidence: "Ảnh bộ nguyên tắc sử dụng AI cá nhân và ghi chú phân tích đạo đức.",
     evidenceCaptions: [
-      "Bộ nguyên tắc sử dụng AI cá nhân đã xây dựng",
-      "Ghi chú phân tích các tình huống đạo đức AI",
-      "Bảng cam kết sử dụng AI có trách nhiệm",
+      "Trích dẫn minh bạch việc sử dụng AI (AI disclosure) trong bài luận",
+      "Ghi chú phân tích ranh giới hỗ trợ hợp lý và gian lận học thuật",
+      "Infographic “Sử dụng AI có trách nhiệm trong học thuật”",
     ],
     integrity: {
       usage: [
-        "Nghiên cứu chính sách và tình huống đạo đức khi ứng dụng AI trong học thuật.",
-        "Tự xây dựng bộ nguyên tắc sử dụng AI cá nhân dựa trên phân tích của mình.",
+        "Dùng AI (ChatGPT) hỗ trợ xây dựng khung sườn lập luận và hiệu đính ngữ pháp cho bài luận.",
+        "Tự nghiên cứu chính sách, phân tích tình huống đạo đức và xây dựng bộ nguyên tắc cá nhân.",
       ],
       commitment: [
-        "Cam kết luôn minh bạch khi có sử dụng AI trong học tập và nghiên cứu.",
-        "Không dùng AI để gian lận hay thay thế hoàn toàn tư duy của bản thân.",
-        "Bộ nguyên tắc được tôi tự đúc kết và cam kết áp dụng lâu dài.",
+        "Mọi số liệu, phân tích và kết luận đều do tôi tự thực hiện và đối chiếu nguồn chính thống.",
+        "Luôn công khai (AI disclosure) khi có sử dụng AI trong học tập và nghiên cứu.",
+        "Không sao chép nguyên văn AI; chịu trách nhiệm cuối cùng với sản phẩm học tập.",
       ],
     },
     analysis: [
-      "AI mang lại nhiều cơ hội nhưng cũng tạo ra rủi ro về đạo đức học thuật.",
-      "Người học cần phát triển năng lực tự đánh giá, phản biện và kiểm chứng.",
-      "Sử dụng AI có trách nhiệm giúp bảo vệ tính trung thực, sáng tạo và chất lượng học tập.",
+      "Ranh giới hỗ trợ hợp lý và gian lận nằm ở mức độ AI can thiệp vào tư duy người học.",
+      "Sao chép nguyên văn AI là “đạo văn của đạo văn” vì AI không ghi nguồn chính xác.",
+      "Lạm dụng AI làm mất năng lực lập luận độc lập; dùng đúng cách lại nâng cao hiệu suất học tập.",
     ],
     lessons: [
-      "Trách nhiệm số là kỹ năng quan trọng trong thời đại AI.",
-      "Sử dụng AI đúng cách giúp người học phát triển bền vững hơn.",
+      "AI không phải mối đe dọa mà là bài kiểm tra năng lực và bản lĩnh của người học.",
+      "Làm chủ AI có trách nhiệm: minh bạch – trung thực – kiểm chứng – chịu trách nhiệm.",
     ],
     extra: (
       <div className="mt-5 rounded-2xl border border-border bg-secondary/40 p-5">
@@ -551,13 +549,12 @@ const PROJECTS: Project[] = [
         </p>
         <ol className="mt-3 space-y-2">
           {[
-            "Không dùng AI để gian lận hoặc làm thay toàn bộ bài tập.",
-            "Luôn kiểm chứng thông tin do AI cung cấp.",
-            "Ghi rõ khi có sử dụng AI trong quá trình học tập.",
-            "Không nhập dữ liệu cá nhân hoặc thông tin nhạy cảm vào AI.",
-            "Không sao chép nguyên văn nội dung AI nếu chưa kiểm tra và chỉnh sửa.",
-            "Sử dụng AI để hỗ trợ tư duy, không thay thế tư duy.",
-            "Chịu trách nhiệm cuối cùng với sản phẩm học tập của bản thân.",
+            "Tư duy đi trước, công cụ theo sau: tự suy nghĩ trước khi dùng AI.",
+            "Hoài nghi khoa học: luôn kiểm chứng số liệu, thông tin do AI đưa ra.",
+            "Nói không với copy-paste: bài nộp viết bằng văn phong và tư duy của mình.",
+            "Minh bạch tuyệt đối: công khai ghi nhận sự hỗ trợ của AI.",
+            "Tôn trọng quy chế: tuân thủ quy định về AI của từng giảng viên, học phần.",
+            "Phát triển năng lực: dùng AI để học nhanh hơn, không để lười biếng.",
           ].map((item, i) => (
             <li key={i} className="flex gap-3 text-sm text-muted-foreground">
               <span className="grid size-6 shrink-0 place-items-center rounded-full bg-primary/15 text-xs font-bold text-primary">
