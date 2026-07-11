@@ -933,14 +933,13 @@ function Index() {
         <div className="mt-12 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           {/* Card cá nhân */}
           <div className="reveal rounded-3xl border border-border bg-card p-7 shadow-[var(--shadow-soft)]">
-            <div
-              className="mx-auto grid size-28 place-items-center rounded-full text-primary-foreground"
-              style={{ background: "var(--gradient-primary)" }}
-            >
-              <span className="font-display text-3xl font-bold">Ảnh</span>
-            </div>
+            <img
+              src={avatarImg.url}
+              alt="Ảnh đại diện Vũ Phương Thảo"
+              className="mx-auto size-28 rounded-full object-cover shadow-[var(--shadow-soft)] ring-2 ring-primary/30"
+            />
             <p className="mt-2 text-center text-xs text-muted-foreground">
-              Ảnh đại diện (placeholder)
+              Ảnh đại diện
             </p>
             <dl className="mt-6 space-y-3 text-sm">
               {[
