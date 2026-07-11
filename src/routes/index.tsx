@@ -1131,7 +1131,7 @@ export function Index() {
               className="mx-auto size-28 rounded-full object-cover shadow-[var(--shadow-soft)] ring-2 ring-primary/30"
             />
             <p className="mt-2 text-center text-xs text-muted-foreground">
-              Ảnh đại diện
+              {"\n"}
             </p>
             <dl className="mt-6 space-y-3 text-sm">
               {[
