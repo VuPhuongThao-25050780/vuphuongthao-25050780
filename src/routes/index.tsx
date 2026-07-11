@@ -153,6 +153,7 @@ const PROJECTS: Project[] = [
     tools: ["File Explorer", "Google Drive", "OneDrive"],
     tags: ["Tổ chức dữ liệu", "Đặt tên nhất quán", "Sao lưu đám mây"],
     evidence: "Ảnh chụp màn hình cấu trúc thư mục và sơ đồ cây thư mục môn học.",
+    evidenceImages: EVIDENCE_1,
     analysis: [
       "Cấu trúc phân nhóm giúp dữ liệu dễ tìm, tránh thất lạc và thuận tiện khi nộp bài.",
       "Quy tắc đặt tên phân biệt rõ phiên bản cũ – mới, hỗ trợ làm việc lâu dài và cộng tác.",
