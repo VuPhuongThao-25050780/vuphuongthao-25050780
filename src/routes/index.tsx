@@ -961,7 +961,7 @@ function Index() {
                 <Heart className="size-4 text-brand-pink-strong" /> Sở thích cá nhân
               </p>
               <div className="flex flex-wrap gap-2">
-                {["Học công nghệ số", "Khám phá AI", "Sáng tạo nội dung", "Quản lý dữ liệu", "Làm việc nhóm"].map(
+                {["Thời trang & làm đẹp", "Nấu ăn & làm bánh", "Chụp ảnh sống ảo", "Du lịch khám phá", "Đọc sách self-help", "Sáng tạo nội dung", "Yoga & gym", "Cắm hoa - decor"].map(
                   (s) => (
                     <span key={s} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
                       {s}
@@ -969,6 +969,23 @@ function Index() {
                   ),
                 )}
               </div>
+            </div>
+            <div className="mt-5">
+              <p className="mb-2 flex items-center gap-2 text-sm font-semibold text-foreground">
+                <Target className="size-4 text-primary" /> Mục tiêu học tập
+              </p>
+              <ul className="space-y-2">
+                {[
+                  "Thành thạo kỹ năng số và ứng dụng AI vào học tập, công việc.",
+                  "Rèn tư duy phản biện, tự học và quản lý dữ liệu khoa học.",
+                  "Phát triển bản thân toàn diện, cân bằng giữa học tập và cuộc sống.",
+                ].map((g) => (
+                  <li key={g} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
+                    <span>{g}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
           {/* Mục tiêu */}
