@@ -1554,7 +1554,7 @@ function Index() {
                 >
                   <Sparkles className="size-5" />
                 </span>
-                <span className="font-display text-lg font-bold">Portfolio số</span>
+                <span className="font-display text-lg font-bold">Digital Portfolio{"\u00a0"}</span>
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
                 Portfolio Kỹ thuật số cá nhân
