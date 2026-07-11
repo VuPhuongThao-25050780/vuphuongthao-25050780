@@ -296,6 +296,17 @@ const PROJECTS: Project[] = [
     tools: ["ChatGPT", "Gemini", "Claude"],
     tags: ["Prompt Engineering", "So sánh kết quả", "Tư duy cấu trúc"],
     evidence: "Ảnh chụp prompt ban đầu, prompt cải tiến và kết quả AI trả lời.",
+    integrity: {
+      usage: [
+        "Dùng AI để thử nghiệm và so sánh hiệu quả giữa các phiên bản prompt.",
+        "Tự thiết kế, chỉnh sửa và tối ưu prompt dựa trên mục tiêu học tập của mình.",
+      ],
+      commitment: [
+        "Toàn bộ prompt và nhận xét cải tiến do tôi tự viết và tự phân tích.",
+        "Kết quả AI được tôi đánh giá, chọn lọc chứ không sao chép nguyên văn.",
+        "Minh bạch ghi lại cả prompt chưa tốt để thể hiện quá trình học thật.",
+      ],
+    },
     analysis: [
       "Prompt cải tiến giúp AI hiểu rõ vai trò, phạm vi, mục tiêu và cách trình bày.",
       "Yêu cầu càng cụ thể, kết quả càng có cấu trúc, ít sai lệch và bám sát mục đích.",
