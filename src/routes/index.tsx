@@ -494,9 +494,11 @@ const PROJECTS: Project[] = [
     title: "Bài tập 5 – Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung",
     goal: "Biết sử dụng AI để tạo sản phẩm nội dung số hoàn chỉnh phục vụ học tập, có chỉnh sửa và chịu trách nhiệm cá nhân.",
     process: [
-      "Lên ý tưởng: chọn một khái niệm trong môn học cần truyền đạt.",
-      "Viết kịch bản và tạo nội dung bằng AI (văn bản, hình ảnh, giọng đọc).",
-      "Chỉnh sửa thủ công, kiểm tra chất lượng và hoàn thiện sản phẩm.",
+      "Lên ý tưởng: chọn một khái niệm trong môn học cần truyền đạt và xác định thông điệp chính, đối tượng người xem.",
+      "Xây dựng dàn ý và kịch bản nội dung, dùng AI gợi ý bố cục, tiêu đề và cách diễn đạt.",
+      "Tạo nội dung bằng AI: sinh văn bản, hình ảnh minh họa và giọng đọc theo kịch bản đã duyệt.",
+      "Chỉnh sửa thủ công: biên tập lời văn, thay/tinh chỉnh hình ảnh và cá nhân hóa theo phong cách riêng.",
+      "Kiểm tra chất lượng: đối chiếu độ chính xác thông tin, rà bản quyền hình ảnh và hoàn thiện sản phẩm cuối.",
     ],
     tools: ["ChatGPT", "Canva", "CapCut", "Gemini", "DALL·E"],
     tags: ["AI tạo sinh", "Quy trình sản xuất", "Biên tập cá nhân"],
@@ -525,6 +527,19 @@ const PROJECTS: Project[] = [
     lessons: [
       "AI là công cụ hỗ trợ sáng tạo, không thay thế hoàn toàn tư duy cá nhân.",
       "Cần biết chọn lọc, biên tập và chịu trách nhiệm với nội dung mình tạo ra.",
+    ],
+    analysis: [
+      "AI giúp rút ngắn đáng kể thời gian lên ý tưởng, viết bản nháp và tạo hình ảnh minh họa.",
+      "Đầu ra của AI thường cần chỉnh sửa: câu chữ đôi khi cứng, hình ảnh có chi tiết sai hoặc chưa đúng thông điệp.",
+      "Người học vẫn phải kiểm duyệt, đối chiếu độ chính xác và đảm bảo không vi phạm bản quyền.",
+      "Chất lượng sản phẩm phụ thuộc vào ý tưởng và khả năng biên tập của con người, không chỉ vào công cụ AI.",
+      "Việc phối hợp nhiều công cụ (văn bản, hình ảnh, dựng video) đòi hỏi kỹ năng tổ chức quy trình rõ ràng.",
+    ],
+    lessons: [
+      "AI là công cụ hỗ trợ sáng tạo, không thay thế hoàn toàn tư duy và cảm quan cá nhân.",
+      "Cần biết chọn lọc, biên tập lại và chịu trách nhiệm với nội dung mình công bố.",
+      "Một quy trình sản xuất rõ ràng (ý tưởng → kịch bản → tạo → chỉnh sửa → kiểm tra) giúp sản phẩm nhất quán và chất lượng.",
+      "Luôn ghi rõ phần có sự hỗ trợ của AI để đảm bảo minh bạch và liêm chính.",
     ],
     extra: (
       <div className="mt-5 grid gap-3 sm:grid-cols-3">
