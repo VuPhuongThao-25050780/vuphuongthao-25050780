@@ -140,6 +140,7 @@ type Project = {
   evidence: string;
   evidenceImages?: string[];
   evidenceCaptions?: string[];
+  evidencePortrait?: boolean;
   fileUrl?: string;
   fileName?: string;
   analysis: string[];
