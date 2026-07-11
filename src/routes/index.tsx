@@ -525,6 +525,138 @@ function HexIcon({
   );
 }
 
+/* Vòng tròn phần trăm nhỏ */
+function PercentRing({ value, color }: { value: number; color: string }) {
+  const r = 30;
+  const c = 2 * Math.PI * r;
+  return (
+    <div className="relative size-[74px] shrink-0">
+      <svg viewBox="0 0 74 74" className="size-full -rotate-90">
+        <circle cx="37" cy="37" r={r} fill="none" stroke={`${color}22`} strokeWidth="5" />
+        <circle
+          cx="37"
+          cy="37"
+          r={r}
+          fill="none"
+          stroke={color}
+          strokeWidth="5"
+          strokeLinecap="round"
+          strokeDasharray={c}
+          strokeDashoffset={c * (1 - value / 100)}
+        />
+      </svg>
+      <span
+        className="absolute inset-0 grid place-items-center font-display text-sm font-extrabold"
+        style={{ color }}
+      >
+        {value}%
+      </span>
+    </div>
+  );
+}
+
+/* Một dòng kỹ năng trong bảng tổng hợp */
+function SkillRow({
+  skill,
+  align,
+}: {
+  skill: (typeof SKILLS)[number];
+  align: "left" | "right";
+}) {
+  const ring = <PercentRing value={skill.level} color={skill.color} />;
+  const text = (
+    <div className={align === "right" ? "text-left" : "text-right"}>
+      <div
+        className={`flex items-center gap-2.5 ${
+          align === "right" ? "flex-row" : "flex-row-reverse"
+        }`}
+      >
+        <span
+          className="grid size-8 shrink-0 place-items-center rounded-lg font-display text-xs font-extrabold text-primary-foreground"
+          style={{ background: skill.color }}
+        >
+          {skill.num}
+        </span>
+        <h3 className="font-display text-base font-bold leading-snug text-foreground">
+          {skill.name}
+        </h3>
+      </div>
+      <p className="mt-1.5 text-sm text-muted-foreground">{skill.desc}</p>
+      <p className="mt-1.5 text-xs">
+        <span className="font-bold" style={{ color: skill.color }}>
+          Ứng dụng thực tế:{" "}
+        </span>
+        <span className="text-muted-foreground">{skill.use}</span>
+      </p>
+    </div>
+  );
+  return (
+    <div
+      className={`reveal flex items-start gap-4 ${
+        align === "right" ? "flex-row" : "flex-row-reverse"
+      }`}
+    >
+      {ring}
+      <div className="min-w-0 flex-1">{text}</div>
+    </div>
+  );
+}
+
+/* Vòng tròn trung tâm 8 phân đoạn */
+function SkillDonut() {
+  // Thứ tự phân đoạn theo chiều kim đồng hồ (bắt đầu từ trên bên phải)
+  const seq = [1, 3, 5, 7, 6, 4, 2, 0];
+  const size = 340;
+  const cx = size / 2;
+  const iconR = 118;
+  const gradient = `conic-gradient(from 0deg, ${seq
+    .map((idx, i) => {
+      const col = SKILLS[idx].color;
+      return `${col} ${i * 45}deg ${(i + 1) * 45}deg`;
+    })
+    .join(", ")})`;
+  return (
+    <div className="relative mx-auto" style={{ width: size, height: size }}>
+      <div className="absolute inset-0 rounded-full" style={{ background: gradient }} />
+      {/* lỗ trắng ở giữa */}
+      <div className="absolute left-1/2 top-1/2 size-[176px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-background shadow-[var(--shadow-glow)]" />
+      {/* nội dung trung tâm */}
+      <div className="absolute left-1/2 top-1/2 grid size-[176px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full text-center">
+        <div>
+          <Target className="mx-auto size-8 text-brand-pink-strong" />
+          <p className="mt-1.5 font-display text-lg font-extrabold leading-none text-foreground">
+            NĂNG LỰC SỐ
+          </p>
+          <p className="text-sm font-bold tracking-wide text-muted-foreground">
+            TOÀN DIỆN
+          </p>
+          <div className="mt-2 flex justify-center gap-1.5">
+            {["#EB168C", "#8B46E8", "#2463EB", "#10A9AE", "#FF7A00"].map((c) => (
+              <span key={c} className="size-1.5 rounded-full" style={{ background: c }} />
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* icon trên mỗi phân đoạn */}
+      {seq.map((idx, i) => {
+        const a = ((i * 45 + 22.5) * Math.PI) / 180;
+        const x = cx + iconR * Math.sin(a);
+        const y = cx - iconR * Math.cos(a);
+        const S = SKILLS[idx].icon;
+        return (
+          <span
+            key={idx}
+            className="absolute grid size-10 -translate-x-1/2 -translate-y-1/2 place-items-center text-white"
+            style={{ left: x, top: y }}
+          >
+            <S className="size-6" strokeWidth={2.2} />
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
 function TaskArrow({
   color,
   dir,
