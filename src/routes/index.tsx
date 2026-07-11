@@ -140,6 +140,8 @@ type Project = {
   evidence: string;
   evidenceImages?: string[];
   evidenceCaptions?: string[];
+  fileUrl?: string;
+  fileName?: string;
   analysis: string[];
   lessons: string[];
   extra?: React.ReactNode;
