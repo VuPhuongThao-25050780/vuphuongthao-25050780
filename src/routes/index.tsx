@@ -363,6 +363,17 @@ const PROJECTS: Project[] = [
     tools: ["Trello", "Notion", "Google Sheets", "Microsoft Planner"],
     tags: ["Quản lý dự án", "Phân công minh bạch", "Theo dõi tiến độ"],
     evidence: "Ảnh chụp bảng công việc nhóm và biểu đồ tiến độ.",
+    integrity: {
+      usage: [
+        "Dùng công cụ trực tuyến và AI để gợi ý cách phân chia công việc hợp lý.",
+        "Việc phối hợp, phân công và theo dõi tiến độ do cả nhóm cùng thực hiện.",
+      ],
+      commitment: [
+        "Tôi đóng góp công bằng và ghi nhận đúng phần việc của từng thành viên.",
+        "Bảng công việc và tiến độ phản ánh trung thực đóng góp thực tế của nhóm.",
+        "Không chiếm công hay bỏ sót đóng góp của bất kỳ thành viên nào.",
+      ],
+    },
     analysis: [
       "Công cụ trực tuyến giúp nhóm làm việc minh bạch, dễ kiểm soát tiến độ.",
       "Mỗi thành viên biết rõ nhiệm vụ, tránh trùng lặp hoặc bỏ sót công việc.",
