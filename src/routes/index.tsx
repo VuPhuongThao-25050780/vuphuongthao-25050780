@@ -23,6 +23,7 @@ import {
   Send,
   TrendingUp,
 } from "lucide-react";
+import { BarChart3, RefreshCw, Brain, Rocket } from "lucide-react";
 import { useReveal } from "../hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -452,14 +453,14 @@ const EVIDENCE = [
 ];
 
 const SKILLS = [
-  ["Quản lý tệp và dữ liệu số", "Tổ chức, đặt tên, sao lưu dữ liệu học tập.", 90, "Lưu trữ và chia sẻ tài liệu môn học"],
-  ["Tìm kiếm thông tin học thuật", "Vận dụng toán tử nâng cao để lọc kết quả.", 88, "Nghiên cứu, làm báo cáo"],
-  ["Đánh giá độ tin cậy của nguồn", "Phân tích tác giả, năm, tính chính thống.", 85, "Kiểm chứng thông tin trước khi dùng"],
-  ["Viết prompt hiệu quả", "Thiết kế prompt có cấu trúc rõ ràng.", 87, "Khai thác AI hỗ trợ học tập"],
-  ["Làm việc nhóm trực tuyến", "Phân công và theo dõi tiến độ số hóa.", 84, "Dự án nhóm, phối hợp từ xa"],
-  ["Sáng tạo nội dung số bằng AI", "Sản xuất video, infographic, hình ảnh.", 82, "Trình bày và truyền đạt kiến thức"],
-  ["Sử dụng AI có trách nhiệm", "Tuân thủ đạo đức và liêm chính học thuật.", 90, "Học tập và nghiên cứu bền vững"],
-  ["Tự đánh giá và cải thiện", "Phản tư, nhận diện điểm mạnh – yếu.", 86, "Phát triển bản thân liên tục"],
+  { num: "01", icon: FolderTree, name: "Quản lý tệp và dữ liệu số", desc: "Tổ chức, đặt tên, sao lưu dữ liệu học tập.", level: 100, use: "Lưu trữ và chia sẻ tài liệu môn học", color: "#EB168C" },
+  { num: "02", icon: Search, name: "Tìm kiếm thông tin học thuật", desc: "Vận dụng toán tử nâng cao để lọc kết quả.", level: 98, use: "Nghiên cứu, làm báo cáo", color: "#2463EB" },
+  { num: "03", icon: ShieldCheck, name: "Đánh giá độ tin cậy của nguồn", desc: "Phân tích tác giả, năm, tính chính thống.", level: 92, use: "Kiểm chứng thông tin trước khi dùng", color: "#8B46E8" },
+  { num: "04", icon: MessageSquareText, name: "Viết prompt hiệu quả", desc: "Thiết kế prompt có cấu trúc rõ ràng.", level: 100, use: "Khai thác AI hỗ trợ học tập", color: "#9333EA" },
+  { num: "05", icon: Users, name: "Làm việc nhóm trực tuyến", desc: "Phân công và theo dõi tiến độ số hóa.", level: 94, use: "Dự án nhóm, phối hợp từ xa", color: "#10A9AE" },
+  { num: "06", icon: Sparkles, name: "Sáng tạo nội dung số bằng AI", desc: "Sản xuất video, infographic, hình ảnh.", level: 93, use: "Trình bày và truyền đạt kiến thức", color: "#FF7A00" },
+  { num: "07", icon: BarChart3, name: "Sử dụng AI có trách nhiệm", desc: "Tuân thủ đạo đức và liêm chính học thuật.", level: 100, use: "Học tập và nghiên cứu bền vững", color: "#3B82F6" },
+  { num: "08", icon: RefreshCw, name: "Tự đánh giá và cải thiện", desc: "Phản tư, nhận diện điểm mạnh – yếu.", level: 95, use: "Phát triển bản thân liên tục", color: "#A855F7" },
 ];
 
 /* ============================================================
@@ -520,6 +521,138 @@ function HexIcon({
           <Icon className="size-7" style={{ color }} strokeWidth={2} />
         </div>
       </div>
+    </div>
+  );
+}
+
+/* Vòng tròn phần trăm nhỏ */
+function PercentRing({ value, color }: { value: number; color: string }) {
+  const r = 30;
+  const c = 2 * Math.PI * r;
+  return (
+    <div className="relative size-[74px] shrink-0">
+      <svg viewBox="0 0 74 74" className="size-full -rotate-90">
+        <circle cx="37" cy="37" r={r} fill="none" stroke={`${color}22`} strokeWidth="5" />
+        <circle
+          cx="37"
+          cy="37"
+          r={r}
+          fill="none"
+          stroke={color}
+          strokeWidth="5"
+          strokeLinecap="round"
+          strokeDasharray={c}
+          strokeDashoffset={c * (1 - value / 100)}
+        />
+      </svg>
+      <span
+        className="absolute inset-0 grid place-items-center font-display text-sm font-extrabold"
+        style={{ color }}
+      >
+        {value}%
+      </span>
+    </div>
+  );
+}
+
+/* Một dòng kỹ năng trong bảng tổng hợp */
+function SkillRow({
+  skill,
+  align,
+}: {
+  skill: (typeof SKILLS)[number];
+  align: "left" | "right";
+}) {
+  const ring = <PercentRing value={skill.level} color={skill.color} />;
+  const text = (
+    <div className={align === "right" ? "text-left" : "text-right"}>
+      <div
+        className={`flex items-center gap-2.5 ${
+          align === "right" ? "flex-row" : "flex-row-reverse"
+        }`}
+      >
+        <span
+          className="grid size-8 shrink-0 place-items-center rounded-lg font-display text-xs font-extrabold text-primary-foreground"
+          style={{ background: skill.color }}
+        >
+          {skill.num}
+        </span>
+        <h3 className="font-display text-base font-bold leading-snug text-foreground">
+          {skill.name}
+        </h3>
+      </div>
+      <p className="mt-1.5 text-sm text-muted-foreground">{skill.desc}</p>
+      <p className="mt-1.5 text-xs">
+        <span className="font-bold" style={{ color: skill.color }}>
+          Ứng dụng thực tế:{" "}
+        </span>
+        <span className="text-muted-foreground">{skill.use}</span>
+      </p>
+    </div>
+  );
+  return (
+    <div
+      className={`reveal flex items-start gap-4 ${
+        align === "right" ? "flex-row" : "flex-row-reverse"
+      }`}
+    >
+      {ring}
+      <div className="min-w-0 flex-1">{text}</div>
+    </div>
+  );
+}
+
+/* Vòng tròn trung tâm 8 phân đoạn */
+function SkillDonut() {
+  // Thứ tự phân đoạn theo chiều kim đồng hồ (bắt đầu từ trên bên phải)
+  const seq = [1, 3, 5, 7, 6, 4, 2, 0];
+  const size = 340;
+  const cx = size / 2;
+  const iconR = 118;
+  const gradient = `conic-gradient(from 0deg, ${seq
+    .map((idx, i) => {
+      const col = SKILLS[idx].color;
+      return `${col} ${i * 45}deg ${(i + 1) * 45}deg`;
+    })
+    .join(", ")})`;
+  return (
+    <div className="relative mx-auto" style={{ width: size, height: size }}>
+      <div className="absolute inset-0 rounded-full" style={{ background: gradient }} />
+      {/* lỗ trắng ở giữa */}
+      <div className="absolute left-1/2 top-1/2 size-[176px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-background shadow-[var(--shadow-glow)]" />
+      {/* nội dung trung tâm */}
+      <div className="absolute left-1/2 top-1/2 grid size-[176px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full text-center">
+        <div>
+          <Target className="mx-auto size-8 text-brand-pink-strong" />
+          <p className="mt-1.5 font-display text-lg font-extrabold leading-none text-foreground">
+            NĂNG LỰC SỐ
+          </p>
+          <p className="text-sm font-bold tracking-wide text-muted-foreground">
+            TOÀN DIỆN
+          </p>
+          <div className="mt-2 flex justify-center gap-1.5">
+            {["#EB168C", "#8B46E8", "#2463EB", "#10A9AE", "#FF7A00"].map((c) => (
+              <span key={c} className="size-1.5 rounded-full" style={{ background: c }} />
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* icon trên mỗi phân đoạn */}
+      {seq.map((idx, i) => {
+        const a = ((i * 45 + 22.5) * Math.PI) / 180;
+        const x = cx + iconR * Math.sin(a);
+        const y = cx - iconR * Math.cos(a);
+        const S = SKILLS[idx].icon;
+        return (
+          <span
+            key={idx}
+            className="absolute grid size-10 -translate-x-1/2 -translate-y-1/2 place-items-center text-white"
+            style={{ left: x, top: y }}
+          >
+            <S className="size-6" strokeWidth={2.2} />
+          </span>
+        );
+      })}
     </div>
   );
 }
@@ -1247,31 +1380,41 @@ function Index() {
           title="Bảng tổng hợp kỹ năng"
           desc="Tám nhóm kỹ năng số cốt lõi được rèn luyện qua toàn bộ hành trình học tập."
         />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2">
-          {SKILLS.map(([name, desc, level, use]) => (
-            <div
-              key={name as string}
-              className="reveal rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] transition-all hover:-translate-y-1"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="font-display text-lg font-bold text-foreground">{name}</h3>
-                <span className="shrink-0 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-bold text-primary">
-                  {level}%
-                </span>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
-              <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-secondary">
-                <div
-                  className="h-full rounded-full"
-                  style={{ width: `${level}%`, background: "var(--gradient-primary)" }}
-                />
-              </div>
-              <p className="mt-3 text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">Ứng dụng thực tế: </span>
-                {use}
-              </p>
-            </div>
-          ))}
+
+        <div className="mt-14 grid items-center gap-10 lg:grid-cols-[1fr_auto_1fr]">
+          {/* Cột trái: 01,03,05,07 */}
+          <div className="order-2 space-y-8 lg:order-1">
+            {[0, 2, 4, 6].map((i) => (
+              <SkillRow key={i} skill={SKILLS[i]} align="left" />
+            ))}
+          </div>
+
+          {/* Vòng tròn trung tâm */}
+          <div className="reveal order-1 lg:order-2">
+            <SkillDonut />
+          </div>
+
+          {/* Cột phải: 02,04,06,08 */}
+          <div className="order-3 space-y-8">
+            {[1, 3, 5, 7].map((i) => (
+              <SkillRow key={i} skill={SKILLS[i]} align="right" />
+            ))}
+          </div>
+        </div>
+
+        {/* Thanh tổng kết */}
+        <div className="reveal mx-auto mt-14 flex max-w-3xl flex-wrap items-center justify-center gap-x-4 gap-y-3 rounded-full border border-border bg-card px-6 py-4 shadow-[var(--shadow-soft)]">
+          <span className="flex items-center gap-2 text-sm font-semibold text-foreground">
+            <Target className="size-5 text-brand-pink-strong" /> 8 kỹ năng cốt lõi
+          </span>
+          <ChevronRight className="size-4 text-muted-foreground" />
+          <span className="flex items-center gap-2 text-sm font-semibold text-foreground">
+            <Brain className="size-5 text-primary" /> Rèn luyện toàn diện
+          </span>
+          <ChevronRight className="size-4 text-muted-foreground" />
+          <span className="flex items-center gap-2 text-sm font-semibold text-foreground">
+            <Rocket className="size-5 text-brand-blue" /> Sẵn sàng cho tương lai
+          </span>
         </div>
       </section>
 
