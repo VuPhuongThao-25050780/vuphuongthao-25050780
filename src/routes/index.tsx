@@ -1,6 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import avatarImg from "@/assets/avatar.jpg.asset.json";
+import mc3641 from "@/assets/minhchung1/IMG_3641.jpg.asset.json";
+import mc3642 from "@/assets/minhchung1/IMG_3642.jpg.asset.json";
+import mc3643 from "@/assets/minhchung1/IMG_3643.jpg.asset.json";
+import mc3644 from "@/assets/minhchung1/IMG_3644.jpg.asset.json";
+import mc3645 from "@/assets/minhchung1/IMG_3645.jpg.asset.json";
+import mc3646 from "@/assets/minhchung1/IMG_3646.jpg.asset.json";
+import mc3647 from "@/assets/minhchung1/IMG_3647.jpg.asset.json";
+import mc3648 from "@/assets/minhchung1/IMG_3648.jpg.asset.json";
+import mc3649 from "@/assets/minhchung1/IMG_3649.jpg.asset.json";
+import mc3650 from "@/assets/minhchung1/IMG_3650.jpg.asset.json";
+import mc3651 from "@/assets/minhchung1/IMG_3651.jpg.asset.json";
+import mc3652 from "@/assets/minhchung1/IMG_3652.jpg.asset.json";
+import mc3653 from "@/assets/minhchung1/IMG_3653.jpg.asset.json";
+import mc3654 from "@/assets/minhchung1/IMG_3654.jpg.asset.json";
+import mc3655 from "@/assets/minhchung1/IMG_3655.jpg.asset.json";
+import mc3656 from "@/assets/minhchung1/IMG_3656.jpg.asset.json";
+import mc3657 from "@/assets/minhchung1/IMG_3657.jpg.asset.json";
+
+const EVIDENCE_1: string[] = [
+  mc3641.url, mc3642.url, mc3643.url, mc3644.url, mc3645.url, mc3646.url,
+  mc3647.url, mc3648.url, mc3649.url, mc3650.url, mc3651.url, mc3652.url,
+  mc3653.url, mc3654.url, mc3655.url, mc3656.url, mc3657.url,
+];
 import {
   FolderTree,
   Search,
