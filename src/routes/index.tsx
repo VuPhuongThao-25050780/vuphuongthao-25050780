@@ -1539,6 +1539,86 @@ function Index() {
               </ul>
             </div>
           </div>
+
+          {/* Trải nghiệm làm Portfolio */}
+          <div className="reveal mt-8 rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
+            <h3 className="flex items-center gap-2 font-display text-xl font-bold text-foreground">
+              <Sparkles className="size-5 text-brand-pink-strong" /> Trải nghiệm làm Portfolio
+            </h3>
+            <p className="mt-4 text-muted-foreground">
+              Việc tự tay xây dựng một Portfolio kỹ thuật số hoàn chỉnh là một trải
+              nghiệm học tập thực sự khác biệt. Thay vì chỉ nộp từng bài rời rạc, em
+              được nhìn lại toàn bộ hành trình một cách có hệ thống, tự sắp xếp bố cục,
+              lựa chọn cách trình bày và kể lại câu chuyện học tập của chính mình.
+            </p>
+            <div className="mt-5 grid gap-4 sm:grid-cols-3">
+              {[
+                ["Chủ động & sáng tạo", "Tự quyết định cấu trúc, màu sắc và cách trình bày từng phần."],
+                ["Tư duy hệ thống", "Kết nối các bài tập rời rạc thành một hành trình liền mạch, có ý nghĩa."],
+                ["Kiên nhẫn & tỉ mỉ", "Rèn tính cẩn thận khi sắp xếp minh chứng và chỉnh sửa nội dung."],
+              ].map(([t, d]) => (
+                <div key={t} className="rounded-2xl bg-secondary/40 p-4">
+                  <p className="text-sm font-semibold text-foreground">{t}</p>
+                  <p className="mt-1.5 text-sm text-muted-foreground">{d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Cam kết liêm chính học thuật */}
+          <div className="reveal mt-8 rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
+            <h3 className="flex items-center gap-2 font-display text-xl font-bold text-foreground">
+              <ShieldCheck className="size-5 text-primary" /> Cam kết Liêm chính Học thuật
+            </h3>
+            <p className="mt-4 text-muted-foreground">
+              Em cam kết toàn bộ nội dung trong Portfolio này được thực hiện một cách
+              trung thực, minh bạch và tôn trọng quyền tác giả:
+            </p>
+            <ul className="mt-4 space-y-3">
+              {[
+                "Tất cả sản phẩm, phân tích và nhận xét đều do em tự thực hiện dựa trên quá trình học tập thực tế.",
+                "AI chỉ được sử dụng như công cụ hỗ trợ, gợi ý; em luôn kiểm chứng, chỉnh sửa và chịu trách nhiệm với kết quả cuối cùng.",
+                "Mọi nguồn tài liệu tham khảo đều được ghi nhận rõ ràng, không sao chép nguyên văn khi chưa trích dẫn.",
+                "Các minh chứng (ảnh chụp màn hình, tệp tin) là bằng chứng thật từ quá trình thực hành của em.",
+              ].map((t) => (
+                <li key={t} className="flex gap-2.5 text-sm text-muted-foreground">
+                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 rounded-2xl bg-secondary/40 p-4 text-sm italic text-foreground">
+              “Em xin cam kết chịu trách nhiệm về tính trung thực và liêm chính của
+              toàn bộ nội dung được trình bày trong Portfolio này.”
+            </p>
+          </div>
+
+          {/* Kiến thức và kỹ năng quan trọng nhất */}
+          <div className="reveal mt-8 rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
+            <h3 className="flex items-center gap-2 font-display text-xl font-bold text-foreground">
+              <Lightbulb className="size-5 text-brand-pink-strong" /> Kiến thức và kỹ năng quan trọng nhất
+            </h3>
+            <p className="mt-4 text-muted-foreground">
+              Sau toàn bộ hành trình, đây là những giá trị em cho là quan trọng nhất
+              và sẽ tiếp tục đồng hành cùng em trong học tập và công việc:
+            </p>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {[
+                ["Tư duy phản biện", "Biết đặt câu hỏi, kiểm chứng thông tin và không tiếp nhận kiến thức một cách thụ động."],
+                ["Sử dụng AI có trách nhiệm", "Khai thác sức mạnh của AI đồng thời giữ vững đạo đức và tư duy độc lập."],
+                ["Quản lý dữ liệu khoa học", "Tổ chức, lưu trữ và bảo vệ dữ liệu một cách hệ thống, bền vững."],
+                ["Giao tiếp & hợp tác số", "Làm việc nhóm hiệu quả và trình bày ý tưởng rõ ràng trên nền tảng số."],
+              ].map(([t, d]) => (
+                <div key={t} className="flex gap-3 rounded-2xl bg-secondary/40 p-4">
+                  <TrendingUp className="mt-0.5 size-5 shrink-0 text-primary" />
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{t}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
