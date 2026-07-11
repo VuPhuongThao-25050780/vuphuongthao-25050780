@@ -210,6 +210,11 @@ const PROJECTS: Project[] = [
     tools: ["Google Search", "Google Scholar", "Website trường đại học", "Báo cáo PDF"],
     tags: ["Toán tử nâng cao", "Đánh giá nguồn", "Tư duy phản biện"],
     evidence: "Ảnh kết quả tìm kiếm với toán tử nâng cao và bảng đánh giá nguồn.",
+    evidenceCaptions: [
+      "Ảnh kết quả tìm kiếm dùng toán tử nâng cao (site:, filetype:)",
+      "Bảng đánh giá độ tin cậy của các nguồn thông tin",
+      "So sánh kết quả giữa các truy vấn khác nhau",
+    ],
     integrity: {
       usage: [
         "Dùng AI để gợi ý từ khóa và cách diễn đạt truy vấn tìm kiếm học thuật.",
