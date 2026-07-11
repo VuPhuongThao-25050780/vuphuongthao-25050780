@@ -23,6 +23,9 @@ import mc2p2 from "@/assets/minhchung2/page2.jpg.asset.json";
 import mc2p3 from "@/assets/minhchung2/page3.jpg.asset.json";
 import mc2p4 from "@/assets/minhchung2/page4.jpg.asset.json";
 import baocao2Pdf from "@/assets/minhchung2/baocao2.pdf.asset.json";
+import mc2i1 from "@/assets/minhchung2/img_01.png.asset.json";
+import mc2i2 from "@/assets/minhchung2/img_02.png.asset.json";
+import mc2i3 from "@/assets/minhchung2/img_03.png.asset.json";
 import mc3_1 from "@/assets/minhchung3/b3_01.png.asset.json";
 import mc3_2 from "@/assets/minhchung3/b3_02.png.asset.json";
 import mc3_3 from "@/assets/minhchung3/b3_03.png.asset.json";
@@ -45,7 +48,10 @@ const EVIDENCE_1: string[] = [
   mc3647.url, mc3648.url, mc3649.url, mc3650.url, mc3651.url, mc3652.url,
   mc3653.url, mc3654.url, mc3655.url, mc3656.url, mc3657.url,
 ];
-const EVIDENCE_2: string[] = [mc2p1.url, mc2p2.url, mc2p3.url, mc2p4.url];
+const EVIDENCE_2: string[] = [
+  mc2i1.url, mc2i2.url, mc2i3.url,
+  mc2p1.url, mc2p2.url, mc2p3.url, mc2p4.url,
+];
 const EVIDENCE_3: string[] = [
   mc3_1.url, mc3_2.url, mc3_3.url, mc3_4.url, mc3_5.url,
   mc3_6.url, mc3_7.url, mc3_8.url, mc3_9.url,
