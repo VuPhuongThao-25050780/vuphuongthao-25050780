@@ -433,6 +433,17 @@ const PROJECTS: Project[] = [
     tools: ["ChatGPT", "Canva", "CapCut", "Gemini", "DALL·E"],
     tags: ["AI tạo sinh", "Quy trình sản xuất", "Biên tập cá nhân"],
     evidence: "Video ngắn (< 5 phút), infographic hoặc ảnh minh họa sản phẩm AI.",
+    integrity: {
+      usage: [
+        "Dùng AI tạo sinh để hỗ trợ ý tưởng, hình ảnh và bản nháp nội dung.",
+        "Tự biên tập, tinh chỉnh và hoàn thiện sản phẩm cuối theo phong cách riêng.",
+      ],
+      commitment: [
+        "Ghi rõ những phần có sự hỗ trợ của AI trong quá trình sáng tạo.",
+        "Tôi chịu trách nhiệm về nội dung, tính chính xác và bản quyền sản phẩm.",
+        "Sản phẩm cuối là kết quả có chỉnh sửa và đóng góp thực sự của cá nhân.",
+      ],
+    },
     analysis: [
       "AI giúp tăng tốc quá trình lên ý tưởng và sản xuất nội dung.",
       "Người học vẫn cần kiểm duyệt, chỉnh sửa và đảm bảo tính chính xác.",
