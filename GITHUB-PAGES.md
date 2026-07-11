@@ -30,4 +30,3 @@ chọn nhánh `main` và thư mục `/docs`.
 
 - File `404.html` và `.nojekyll` được tạo tự động để tránh lỗi 404 khi refresh/deep-link.
 - Đây là bản build tĩnh riêng cho GitHub Pages; bản chạy trên Lovable (SSR) vẫn hoạt động bình thường.
-```
