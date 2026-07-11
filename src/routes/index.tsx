@@ -946,6 +946,8 @@ function Index() {
                 ["Họ và tên", "Vũ Phương Thảo"],
                 ["Trường", "Đại Học Kinh Tế- ĐHQGHN"],
                 ["Khoa\u00a0", "Khoa Kinh Tế Phát Triển"],
+                ["Lớp", "[Điền lớp]"],
+                ["MSV", "[Điền mã sinh viên]"],
               ].map(([k, v]) => (
                 <div key={k} className="flex items-center justify-between gap-3 border-b border-border pb-2">
                   <dt className="text-muted-foreground">{k}</dt>
