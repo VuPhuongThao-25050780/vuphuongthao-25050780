@@ -442,15 +442,6 @@ const PROJECTS: Project[] = [
   },
 ];
 
-const EVIDENCE = [
-  { title: "Cấu trúc thư mục", desc: "Ảnh chụp cây thư mục môn học được tổ chức khoa học.", tint: "from-brand-pink/40 to-brand-blue-soft/40" },
-  { title: "Kết quả tìm kiếm học thuật", desc: "Ảnh kết quả với toán tử nâng cao và bảng đánh giá nguồn.", tint: "from-brand-blue-soft/40 to-brand-pink/40" },
-  { title: "So sánh prompt", desc: "Ảnh prompt ban đầu, prompt cải tiến và kết quả AI.", tint: "from-brand-pink/40 to-brand-blue-soft/40" },
-  { title: "Bảng quản lý công việc nhóm", desc: "Ảnh chụp bảng phân công và theo dõi tiến độ.", tint: "from-brand-blue-soft/40 to-brand-pink/40" },
-  { title: "Sản phẩm AI", desc: "Ảnh/video sản phẩm số được tạo và biên tập bằng AI.", tint: "from-brand-pink/40 to-brand-blue-soft/40" },
-  { title: "Bộ nguyên tắc sử dụng AI", desc: "Ảnh bộ nguyên tắc cá nhân sử dụng AI có trách nhiệm.", tint: "from-brand-blue-soft/40 to-brand-pink/40" },
-];
-
 const SKILLS = [
   { num: "01", icon: FolderTree, name: "Quản lý tệp và dữ liệu số", desc: "Tổ chức, đặt tên, sao lưu dữ liệu học tập.", level: 100, use: "Lưu trữ và chia sẻ tài liệu môn học", color: "#EB168C" },
   { num: "02", icon: Search, name: "Tìm kiếm thông tin học thuật", desc: "Vận dụng toán tử nâng cao để lọc kết quả.", level: 98, use: "Nghiên cứu, làm báo cáo", color: "#2463EB" },
