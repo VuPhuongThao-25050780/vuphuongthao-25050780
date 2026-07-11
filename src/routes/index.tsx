@@ -38,7 +38,6 @@ const NAV = [
   { id: "gioi-thieu", label: "Giới thiệu" },
   { id: "tong-quan", label: "Tổng quan" },
   { id: "du-an", label: "Dự án học tập" },
-  { id: "minh-chung", label: "Minh chứng" },
   { id: "ky-nang", label: "Kỹ năng" },
   { id: "tong-ket", label: "Tổng kết" },
 ];
@@ -441,15 +440,6 @@ const PROJECTS: Project[] = [
       </div>
     ),
   },
-];
-
-const EVIDENCE = [
-  { title: "Cấu trúc thư mục", desc: "Ảnh chụp cây thư mục môn học được tổ chức khoa học.", tint: "from-brand-pink/40 to-brand-blue-soft/40" },
-  { title: "Kết quả tìm kiếm học thuật", desc: "Ảnh kết quả với toán tử nâng cao và bảng đánh giá nguồn.", tint: "from-brand-blue-soft/40 to-brand-pink/40" },
-  { title: "So sánh prompt", desc: "Ảnh prompt ban đầu, prompt cải tiến và kết quả AI.", tint: "from-brand-pink/40 to-brand-blue-soft/40" },
-  { title: "Bảng quản lý công việc nhóm", desc: "Ảnh chụp bảng phân công và theo dõi tiến độ.", tint: "from-brand-blue-soft/40 to-brand-pink/40" },
-  { title: "Sản phẩm AI", desc: "Ảnh/video sản phẩm số được tạo và biên tập bằng AI.", tint: "from-brand-pink/40 to-brand-blue-soft/40" },
-  { title: "Bộ nguyên tắc sử dụng AI", desc: "Ảnh bộ nguyên tắc cá nhân sử dụng AI có trách nhiệm.", tint: "from-brand-blue-soft/40 to-brand-pink/40" },
 ];
 
 const SKILLS = [
@@ -882,7 +872,6 @@ function Index() {
               {[
                 ["#gioi-thieu", "Giới thiệu"],
                 ["#du-an", "Dự án học tập"],
-                ["#minh-chung", "Minh chứng"],
                 ["#tong-ket", "Tổng kết"],
               ].map(([href, label], i) => (
                 <a
@@ -1340,36 +1329,6 @@ function Index() {
               {p.extra && <div className="px-6 pb-8 sm:px-8">{p.extra}</div>}
             </article>
           ))}
-        </div>
-      </section>
-
-      {/* ===================== MINH CHỨNG / GALLERY ===================== */}
-      <section id="minh-chung" className="bg-secondary/25 py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-5">
-          <SectionHeading
-            eyebrow="Thư viện minh chứng"
-            title="Evidence Gallery"
-            desc="Bộ minh chứng trực quan cho từng nhiệm vụ. Có thể thay ảnh placeholder bằng ảnh thật một cách dễ dàng."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {EVIDENCE.map((e) => (
-              <div
-                key={e.title}
-                className="reveal group overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-soft)] transition-all hover:-translate-y-1.5 hover:shadow-[var(--shadow-glow)]"
-              >
-                <div className={`grid aspect-video place-items-center bg-gradient-to-br ${e.tint}`}>
-                  <ImageIcon className="size-10 text-foreground/50 transition-transform group-hover:scale-110" />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-display text-lg font-bold text-foreground">{e.title}</h3>
-                  <p className="mt-1.5 text-sm text-muted-foreground">{e.desc}</p>
-                  <button className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                    Xem chi tiết <ChevronRight className="size-4" />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
