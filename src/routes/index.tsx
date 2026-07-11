@@ -21,7 +21,6 @@ import {
   CheckCircle2,
   Quote,
   BookOpen,
-  Send,
   TrendingUp,
 } from "lucide-react";
 import { BarChart3, RefreshCw, Brain, Rocket } from "lucide-react";
