@@ -190,7 +190,6 @@ type Project = {
   tags: string[];
   evidence: string;
   evidenceImages?: string[];
-  evidenceCaptions?: string[];
   evidencePortrait?: boolean;
   fileUrl?: string;
   fileName?: string;
