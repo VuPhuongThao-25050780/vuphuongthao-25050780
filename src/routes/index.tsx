@@ -18,12 +18,18 @@ import mc3654 from "@/assets/minhchung1/IMG_3654.jpg.asset.json";
 import mc3655 from "@/assets/minhchung1/IMG_3655.jpg.asset.json";
 import mc3656 from "@/assets/minhchung1/IMG_3656.jpg.asset.json";
 import mc3657 from "@/assets/minhchung1/IMG_3657.jpg.asset.json";
+import mc2p1 from "@/assets/minhchung2/page1.jpg.asset.json";
+import mc2p2 from "@/assets/minhchung2/page2.jpg.asset.json";
+import mc2p3 from "@/assets/minhchung2/page3.jpg.asset.json";
+import mc2p4 from "@/assets/minhchung2/page4.jpg.asset.json";
+import baocao2Pdf from "@/assets/minhchung2/baocao2.pdf.asset.json";
 
 const EVIDENCE_1: string[] = [
   mc3641.url, mc3642.url, mc3643.url, mc3644.url, mc3645.url, mc3646.url,
   mc3647.url, mc3648.url, mc3649.url, mc3650.url, mc3651.url, mc3652.url,
   mc3653.url, mc3654.url, mc3655.url, mc3656.url, mc3657.url,
 ];
+const EVIDENCE_2: string[] = [mc2p1.url, mc2p2.url, mc2p3.url, mc2p4.url];
 import {
   FolderTree,
   Search,
@@ -134,6 +140,9 @@ type Project = {
   evidence: string;
   evidenceImages?: string[];
   evidenceCaptions?: string[];
+  evidencePortrait?: boolean;
+  fileUrl?: string;
+  fileName?: string;
   analysis: string[];
   lessons: string[];
   extra?: React.ReactNode;
@@ -211,11 +220,10 @@ const PROJECTS: Project[] = [
     tools: ["Google Scholar", "ScienceDirect", "VNU-Lic (ĐHQGHN)", "World Bank", "OECD"],
     tags: ["Tăng trưởng xanh", "Đánh giá nguồn Scopus", "Kinh tế bền vững"],
     evidence: "Bảng tổng hợp 10 tài liệu và đánh giá độ tin cậy theo tiêu chí.",
-    evidenceCaptions: [
-      "Ảnh kết quả tìm kiếm trên Google Scholar / ScienceDirect",
-      "Bảng tổng hợp 10 tài liệu và điểm độ tin cậy (1–5)",
-      "Danh mục tài liệu tham khảo trích dẫn theo chuẩn",
-    ],
+    evidenceImages: EVIDENCE_2,
+    evidencePortrait: true,
+    fileUrl: baocao2Pdf.url,
+    fileName: "BaoCao_DuAn2.pdf",
     integrity: {
       usage: [
         "Dùng AI để gợi ý từ khóa và diễn đạt truy vấn tìm kiếm học thuật.",
@@ -1471,20 +1479,40 @@ function Index() {
                       ({p.evidenceImages.length} ảnh)
                     </span>
                   </p>
-                  <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                  {p.fileUrl && (
+                    <a
+                      href={p.fileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-xs font-semibold text-primary transition hover:bg-primary/10"
+                    >
+                      <ImageIcon className="size-4" /> Tải file gốc: {p.fileName ?? "Tài liệu"}
+                    </a>
+                  )}
+                  <div
+                    className={`mt-4 grid gap-3 ${
+                      p.evidencePortrait
+                        ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+                        : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+                    }`}
+                  >
                     {p.evidenceImages.map((src, i) => (
                       <a
                         key={i}
                         href={src}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group overflow-hidden rounded-xl border border-border bg-secondary/30 shadow-sm transition hover:shadow-md"
+                        className="group overflow-hidden rounded-xl border border-border bg-white shadow-sm transition hover:shadow-md"
                       >
                         <img
                           src={src}
                           alt={`Minh chứng bài tập ${p.index} - ảnh ${i + 1}`}
                           loading="lazy"
-                          className="aspect-video w-full object-cover transition group-hover:scale-105"
+                          className={`w-full transition group-hover:scale-105 ${
+                            p.evidencePortrait
+                              ? "aspect-[3/4] object-contain"
+                              : "aspect-video object-cover"
+                          }`}
                         />
                       </a>
                     ))}
