@@ -1343,36 +1343,6 @@ function Index() {
         </div>
       </section>
 
-      {/* ===================== MINH CHỨNG / GALLERY ===================== */}
-      <section id="minh-chung" className="bg-secondary/25 py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-5">
-          <SectionHeading
-            eyebrow="Thư viện minh chứng"
-            title="Evidence Gallery"
-            desc="Bộ minh chứng trực quan cho từng nhiệm vụ. Có thể thay ảnh placeholder bằng ảnh thật một cách dễ dàng."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {EVIDENCE.map((e) => (
-              <div
-                key={e.title}
-                className="reveal group overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-soft)] transition-all hover:-translate-y-1.5 hover:shadow-[var(--shadow-glow)]"
-              >
-                <div className={`grid aspect-video place-items-center bg-gradient-to-br ${e.tint}`}>
-                  <ImageIcon className="size-10 text-foreground/50 transition-transform group-hover:scale-110" />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-display text-lg font-bold text-foreground">{e.title}</h3>
-                  <p className="mt-1.5 text-sm text-muted-foreground">{e.desc}</p>
-                  <button className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                    Xem chi tiết <ChevronRight className="size-4" />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ===================== KỸ NĂNG ===================== */}
       <section id="ky-nang" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
