@@ -336,6 +336,7 @@ const PROJECTS: Project[] = [
     tools: ["ChatGPT", "Gemini", "Claude"],
     tags: ["Prompt Engineering", "So sánh kết quả", "Tư duy cấu trúc"],
     evidence: "Ảnh chụp prompt ban đầu, prompt cải tiến và kết quả AI trả lời.",
+    evidenceImages: EVIDENCE_3,
     evidenceCaptions: [
       "3 mức prompt cho tác vụ tóm tắt tài liệu học thuật",
       "Kết quả AI giải thích khái niệm “trí tuệ nhân tạo” theo prompt nâng cao",
@@ -406,6 +407,7 @@ const PROJECTS: Project[] = [
     tools: ["Trello", "Notion", "Google Sheets", "Microsoft Planner"],
     tags: ["Quản lý dự án", "Phân công minh bạch", "Theo dõi tiến độ"],
     evidence: "Ảnh chụp bảng công việc nhóm và biểu đồ tiến độ.",
+    evidenceImages: EVIDENCE_4,
     evidenceCaptions: [
       "Bảng quản lý công việc nhóm (Trello / Notion)",
       "Phân công nhiệm vụ chi tiết theo từng thành viên",
@@ -539,6 +541,7 @@ const PROJECTS: Project[] = [
     tools: ["ChatGPT", "Quy định ĐHQGHN", "Tài liệu học thuật", "Canva (infographic)"],
     tags: ["Đạo đức AI", "Liêm chính học thuật", "Tư duy phản biện"],
     evidence: "Ảnh bộ nguyên tắc sử dụng AI cá nhân và ghi chú phân tích đạo đức.",
+    evidenceImages: EVIDENCE_6,
     evidenceCaptions: [
       "Trích dẫn minh bạch việc sử dụng AI (AI disclosure) trong bài luận",
       "Ghi chú phân tích ranh giới hỗ trợ hợp lý và gian lận học thuật",
