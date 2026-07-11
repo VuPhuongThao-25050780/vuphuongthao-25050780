@@ -221,6 +221,7 @@ const PROJECTS: Project[] = [
     tags: ["Tăng trưởng xanh", "Đánh giá nguồn Scopus", "Kinh tế bền vững"],
     evidence: "Bảng tổng hợp 10 tài liệu và đánh giá độ tin cậy theo tiêu chí.",
     evidenceImages: EVIDENCE_2,
+    evidencePortrait: true,
     fileUrl: baocao2Pdf.url,
     fileName: "BaoCao_DuAn2.pdf",
     integrity: {
