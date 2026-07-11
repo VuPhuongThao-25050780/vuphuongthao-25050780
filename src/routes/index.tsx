@@ -23,6 +23,7 @@ import {
   Send,
   TrendingUp,
 } from "lucide-react";
+import { BarChart3, RefreshCw, Brain, Rocket } from "lucide-react";
 import { useReveal } from "../hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
