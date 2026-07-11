@@ -197,6 +197,9 @@ const PROJECTS: Project[] = [
     tags: ["Quản lý tệp tin", "Tổ chức thư mục", "Thao tác cơ bản"],
     evidence: "Ảnh chụp màn hình cấu trúc thư mục và sơ đồ cây thư mục môn học.",
     evidenceImages: EVIDENCE_1,
+    fileUrl:
+      "https://drive.google.com/drive/u/0/folders/1FxQJn4tyLcM9LJfMATc2N-5fKdeoi9vA",
+    fileName: "Thư mục minh chứng (Google Drive)",
     integrity: {
       usage: [
         "Không sử dụng AI trong bài tập này.",
