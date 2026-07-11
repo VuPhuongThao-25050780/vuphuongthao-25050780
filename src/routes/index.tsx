@@ -367,15 +367,6 @@ const PROJECTS: Project[] = [
       ],
     },
     analysis: [
-      "Prompt nâng cao hiệu quả nhờ có vai trò (role), cấu trúc rõ ràng và hướng dẫn định dạng đầu ra.",
-      "Prompt cơ bản quá chung chung, không kiểm soát được độ dài, nội dung nên dễ thiếu chính xác.",
-      "Kỹ thuật prompt engineering: role prompting, step-by-step, ràng buộc (constraint) và formatting quyết định chất lượng.",
-    ],
-    lessons: [
-      "Prompt càng rõ ràng, có cấu trúc và định hướng cụ thể thì kết quả càng chất lượng.",
-      "Nguyên tắc: rõ ràng – đặt vai trò – thêm ràng buộc – yêu cầu cấu trúc – dùng ví dụ – chia nhỏ nhiệm vụ.",
-    ],
-    analysis: [
       "Prompt nâng cao cho kết quả tốt nhất nhờ có vai trò (role), cấu trúc rõ ràng và hướng dẫn định dạng đầu ra cụ thể.",
       "Prompt cơ bản quá chung chung, không kiểm soát được độ dài và nội dung nên dễ lan man, thiếu chính xác.",
       "Cùng một tác vụ, chất lượng đầu ra chênh lệch rõ rệt giữa 3 mức prompt — chứng tỏ cách hỏi quan trọng ngang với công cụ.",
