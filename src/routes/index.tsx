@@ -549,13 +549,12 @@ const PROJECTS: Project[] = [
         </p>
         <ol className="mt-3 space-y-2">
           {[
-            "Không dùng AI để gian lận hoặc làm thay toàn bộ bài tập.",
-            "Luôn kiểm chứng thông tin do AI cung cấp.",
-            "Ghi rõ khi có sử dụng AI trong quá trình học tập.",
-            "Không nhập dữ liệu cá nhân hoặc thông tin nhạy cảm vào AI.",
-            "Không sao chép nguyên văn nội dung AI nếu chưa kiểm tra và chỉnh sửa.",
-            "Sử dụng AI để hỗ trợ tư duy, không thay thế tư duy.",
-            "Chịu trách nhiệm cuối cùng với sản phẩm học tập của bản thân.",
+            "Tư duy đi trước, công cụ theo sau: tự suy nghĩ trước khi dùng AI.",
+            "Hoài nghi khoa học: luôn kiểm chứng số liệu, thông tin do AI đưa ra.",
+            "Nói không với copy-paste: bài nộp viết bằng văn phong và tư duy của mình.",
+            "Minh bạch tuyệt đối: công khai ghi nhận sự hỗ trợ của AI.",
+            "Tôn trọng quy chế: tuân thủ quy định về AI của từng giảng viên, học phần.",
+            "Phát triển năng lực: dùng AI để học nhanh hơn, không để lười biếng.",
           ].map((item, i) => (
             <li key={i} className="flex gap-3 text-sm text-muted-foreground">
               <span className="grid size-6 shrink-0 place-items-center rounded-full bg-primary/15 text-xs font-bold text-primary">
