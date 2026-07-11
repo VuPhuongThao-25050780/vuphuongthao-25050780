@@ -54,6 +54,12 @@ import mc3n_9 from "@/assets/minhchung3new/b3n_09.png.asset.json";
 import baocao3Pdf from "@/assets/minhchung3new/baocao3.pdf.asset.json";
 import baocao4Pdf from "@/assets/minhchung4new/baocao4.pdf.asset.json";
 import baocao6Pdf from "@/assets/minhchung6new/baocao6.pdf.asset.json";
+import mc5_poster from "@/assets/minhchung5new/b5_poster.png.asset.json";
+import mc5_chatgpt from "@/assets/minhchung5new/b5_chatgpt.png.asset.json";
+import mc5_openart from "@/assets/minhchung5new/b5_openart.png.asset.json";
+import mc5_canva from "@/assets/minhchung5new/b5_canva.png.asset.json";
+import mc5_rejected from "@/assets/minhchung5new/b5_rejected.png.asset.json";
+import baocao5Docx from "@/assets/minhchung5new/baocao5.docx.asset.json";
 
 const EVIDENCE_1: string[] = [
   mc3641.url, mc3642.url, mc3643.url, mc3644.url, mc3645.url, mc3646.url,
@@ -71,6 +77,9 @@ const EVIDENCE_3: string[] = [
   mc3n_6.url, mc3n_7.url, mc3n_8.url, mc3n_9.url,
 ];
 const EVIDENCE_4: string[] = [mc4_1.url, mc4_2.url, mc4_3.url, mc4_4.url, mc4_5.url];
+const EVIDENCE_5: string[] = [
+  mc5_poster.url, mc5_chatgpt.url, mc5_openart.url, mc5_canva.url, mc5_rejected.url,
+];
 const EVIDENCE_6: string[] = [mc6_1.url, mc6_2.url];
 import {
   FolderTree,
