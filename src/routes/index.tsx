@@ -1462,7 +1462,7 @@ function Index() {
                     </ul>
                   </div>
                   {/* Khu vực minh chứng */}
-                  {!p.evidenceImages?.length && !p.evidenceCaptions?.length && (
+                  {!p.evidenceImages?.length && (
                   <div className="grid place-items-center rounded-2xl border-2 border-dashed border-border bg-secondary/20 p-6 text-center">
                     <ImageIcon className="size-8 text-muted-foreground" />
                     <p className="mt-2 text-sm font-medium text-foreground">{p.evidence}</p>
