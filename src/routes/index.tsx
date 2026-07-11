@@ -209,6 +209,17 @@ const PROJECTS: Project[] = [
     tools: ["Google Search", "Google Scholar", "Website trường đại học", "Báo cáo PDF"],
     tags: ["Toán tử nâng cao", "Đánh giá nguồn", "Tư duy phản biện"],
     evidence: "Ảnh kết quả tìm kiếm với toán tử nâng cao và bảng đánh giá nguồn.",
+    integrity: {
+      usage: [
+        "Dùng AI để gợi ý từ khóa và cách diễn đạt truy vấn tìm kiếm học thuật.",
+        "Mọi nguồn tài liệu đều do tôi tự tìm, tự đọc và tự đánh giá độ tin cậy.",
+      ],
+      commitment: [
+        "Tôi tự kiểm chứng tính chính xác của từng nguồn trước khi sử dụng.",
+        "Ghi rõ nguồn gốc và tác giả cho toàn bộ thông tin tham khảo.",
+        "AI chỉ đóng vai trò hỗ trợ tìm kiếm, không thay thế đánh giá của tôi.",
+      ],
+    },
     analysis: [
       "Tìm kiếm hiệu quả cần chiến lược, không chỉ là nhập từ khóa.",
       "Toán tử nâng cao giúp lọc nhiễu, khoanh vùng tài liệu đúng định dạng và nguồn.",
