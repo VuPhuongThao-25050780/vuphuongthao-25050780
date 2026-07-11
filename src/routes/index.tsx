@@ -453,14 +453,14 @@ const EVIDENCE = [
 ];
 
 const SKILLS = [
-  ["Quản lý tệp và dữ liệu số", "Tổ chức, đặt tên, sao lưu dữ liệu học tập.", 90, "Lưu trữ và chia sẻ tài liệu môn học"],
-  ["Tìm kiếm thông tin học thuật", "Vận dụng toán tử nâng cao để lọc kết quả.", 88, "Nghiên cứu, làm báo cáo"],
-  ["Đánh giá độ tin cậy của nguồn", "Phân tích tác giả, năm, tính chính thống.", 85, "Kiểm chứng thông tin trước khi dùng"],
-  ["Viết prompt hiệu quả", "Thiết kế prompt có cấu trúc rõ ràng.", 87, "Khai thác AI hỗ trợ học tập"],
-  ["Làm việc nhóm trực tuyến", "Phân công và theo dõi tiến độ số hóa.", 84, "Dự án nhóm, phối hợp từ xa"],
-  ["Sáng tạo nội dung số bằng AI", "Sản xuất video, infographic, hình ảnh.", 82, "Trình bày và truyền đạt kiến thức"],
-  ["Sử dụng AI có trách nhiệm", "Tuân thủ đạo đức và liêm chính học thuật.", 90, "Học tập và nghiên cứu bền vững"],
-  ["Tự đánh giá và cải thiện", "Phản tư, nhận diện điểm mạnh – yếu.", 86, "Phát triển bản thân liên tục"],
+  { num: "01", icon: FolderTree, name: "Quản lý tệp và dữ liệu số", desc: "Tổ chức, đặt tên, sao lưu dữ liệu học tập.", level: 100, use: "Lưu trữ và chia sẻ tài liệu môn học", color: "#EB168C" },
+  { num: "02", icon: Search, name: "Tìm kiếm thông tin học thuật", desc: "Vận dụng toán tử nâng cao để lọc kết quả.", level: 98, use: "Nghiên cứu, làm báo cáo", color: "#2463EB" },
+  { num: "03", icon: ShieldCheck, name: "Đánh giá độ tin cậy của nguồn", desc: "Phân tích tác giả, năm, tính chính thống.", level: 92, use: "Kiểm chứng thông tin trước khi dùng", color: "#8B46E8" },
+  { num: "04", icon: MessageSquareText, name: "Viết prompt hiệu quả", desc: "Thiết kế prompt có cấu trúc rõ ràng.", level: 100, use: "Khai thác AI hỗ trợ học tập", color: "#9333EA" },
+  { num: "05", icon: Users, name: "Làm việc nhóm trực tuyến", desc: "Phân công và theo dõi tiến độ số hóa.", level: 94, use: "Dự án nhóm, phối hợp từ xa", color: "#10A9AE" },
+  { num: "06", icon: Sparkles, name: "Sáng tạo nội dung số bằng AI", desc: "Sản xuất video, infographic, hình ảnh.", level: 93, use: "Trình bày và truyền đạt kiến thức", color: "#FF7A00" },
+  { num: "07", icon: BarChart3, name: "Sử dụng AI có trách nhiệm", desc: "Tuân thủ đạo đức và liêm chính học thuật.", level: 100, use: "Học tập và nghiên cứu bền vững", color: "#3B82F6" },
+  { num: "08", icon: RefreshCw, name: "Tự đánh giá và cải thiện", desc: "Phản tư, nhận diện điểm mạnh – yếu.", level: 95, use: "Phát triển bản thân liên tục", color: "#A855F7" },
 ];
 
 /* ============================================================
