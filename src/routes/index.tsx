@@ -133,6 +133,7 @@ type Project = {
   tags: string[];
   evidence: string;
   evidenceImages?: string[];
+  evidenceCaptions?: string[];
   analysis: string[];
   lessons: string[];
   extra?: React.ReactNode;
@@ -209,6 +210,11 @@ const PROJECTS: Project[] = [
     tools: ["Google Search", "Google Scholar", "Website trường đại học", "Báo cáo PDF"],
     tags: ["Toán tử nâng cao", "Đánh giá nguồn", "Tư duy phản biện"],
     evidence: "Ảnh kết quả tìm kiếm với toán tử nâng cao và bảng đánh giá nguồn.",
+    evidenceCaptions: [
+      "Ảnh kết quả tìm kiếm dùng toán tử nâng cao (site:, filetype:)",
+      "Bảng đánh giá độ tin cậy của các nguồn thông tin",
+      "So sánh kết quả giữa các truy vấn khác nhau",
+    ],
     integrity: {
       usage: [
         "Dùng AI để gợi ý từ khóa và cách diễn đạt truy vấn tìm kiếm học thuật.",
@@ -296,6 +302,11 @@ const PROJECTS: Project[] = [
     tools: ["ChatGPT", "Gemini", "Claude"],
     tags: ["Prompt Engineering", "So sánh kết quả", "Tư duy cấu trúc"],
     evidence: "Ảnh chụp prompt ban đầu, prompt cải tiến và kết quả AI trả lời.",
+    evidenceCaptions: [
+      "Prompt ban đầu còn chung chung, thiếu bối cảnh",
+      "Prompt cải tiến đầy đủ vai trò, bối cảnh, yêu cầu",
+      "Kết quả AI trả lời cho hai phiên bản prompt",
+    ],
     integrity: {
       usage: [
         "Dùng AI để thử nghiệm và so sánh hiệu quả giữa các phiên bản prompt.",
@@ -363,6 +374,11 @@ const PROJECTS: Project[] = [
     tools: ["Trello", "Notion", "Google Sheets", "Microsoft Planner"],
     tags: ["Quản lý dự án", "Phân công minh bạch", "Theo dõi tiến độ"],
     evidence: "Ảnh chụp bảng công việc nhóm và biểu đồ tiến độ.",
+    evidenceCaptions: [
+      "Bảng quản lý công việc nhóm (Trello / Notion)",
+      "Phân công nhiệm vụ chi tiết theo từng thành viên",
+      "Biểu đồ theo dõi tiến độ và trạng thái công việc",
+    ],
     integrity: {
       usage: [
         "Dùng công cụ trực tuyến và AI để gợi ý cách phân chia công việc hợp lý.",
@@ -433,6 +449,11 @@ const PROJECTS: Project[] = [
     tools: ["ChatGPT", "Canva", "CapCut", "Gemini", "DALL·E"],
     tags: ["AI tạo sinh", "Quy trình sản xuất", "Biên tập cá nhân"],
     evidence: "Video ngắn (< 5 phút), infographic hoặc ảnh minh họa sản phẩm AI.",
+    evidenceCaptions: [
+      "Infographic tóm tắt \u201cAI in University Learning\u201d (bản đọc)",
+      "Prompt DALL·E & phản hồi ChatGPT cho hình minh họa",
+      "Infographic đầy đủ: lợi ích, thách thức & sử dụng AI có trách nhiệm",
+    ],
     integrity: {
       usage: [
         "Dùng AI tạo sinh để hỗ trợ ý tưởng, hình ảnh và bản nháp nội dung.",
@@ -486,6 +507,11 @@ const PROJECTS: Project[] = [
     tools: ["Tài liệu học thuật", "Quy định nhà trường", "Nguồn tham khảo chính thống"],
     tags: ["Đạo đức AI", "Liêm chính học thuật", "Tư duy phản biện"],
     evidence: "Ảnh bộ nguyên tắc sử dụng AI cá nhân và ghi chú phân tích đạo đức.",
+    evidenceCaptions: [
+      "Bộ nguyên tắc sử dụng AI cá nhân đã xây dựng",
+      "Ghi chú phân tích các tình huống đạo đức AI",
+      "Bảng cam kết sử dụng AI có trách nhiệm",
+    ],
     integrity: {
       usage: [
         "Nghiên cứu chính sách và tình huống đạo đức khi ứng dụng AI trong học thuật.",
@@ -1358,7 +1384,7 @@ function Index() {
                     </ul>
                   </div>
                   {/* Khu vực minh chứng */}
-                  {!p.evidenceImages?.length && (
+                  {!p.evidenceImages?.length && !p.evidenceCaptions?.length && (
                   <div className="grid place-items-center rounded-2xl border-2 border-dashed border-border bg-secondary/20 p-6 text-center">
                     <ImageIcon className="size-8 text-muted-foreground" />
                     <p className="mt-2 text-sm font-medium text-foreground">{p.evidence}</p>
@@ -1400,6 +1426,39 @@ function Index() {
                   </div>
                 </div>
               </div>
+              {p.evidenceCaptions && p.evidenceCaptions.length > 0 && (
+                <div className="border-t border-border px-6 pb-8 pt-6 sm:px-8">
+                  <p className="flex items-center gap-2 text-sm font-bold text-foreground">
+                    <ImageIcon className="size-4 text-primary" /> Ảnh minh chứng thực hành
+                    <span className="text-xs font-normal text-muted-foreground">
+                      ({p.evidenceCaptions.length} minh chứng)
+                    </span>
+                  </p>
+                  <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {p.evidenceCaptions.map((cap, i) => (
+                      <figure
+                        key={i}
+                        className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:shadow-md"
+                      >
+                        <div
+                          className="grid aspect-[4/3] place-items-center text-primary-foreground"
+                          style={{ background: "var(--gradient-primary)" }}
+                        >
+                          <div className="text-center opacity-90">
+                            <ImageIcon className="mx-auto size-9" />
+                            <p className="mt-2 text-xs font-semibold">
+                              Minh chứng {i + 1}
+                            </p>
+                          </div>
+                        </div>
+                        <figcaption className="px-3 py-2.5 text-center text-xs font-medium text-primary">
+                          {cap}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              )}
               {p.evidenceImages && p.evidenceImages.length > 0 && (
                 <div className="border-t border-border px-6 pb-8 pt-6 sm:px-8">
                   <p className="flex items-center gap-2 text-sm font-bold text-foreground">
