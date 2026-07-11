@@ -1380,31 +1380,41 @@ function Index() {
           title="Bảng tổng hợp kỹ năng"
           desc="Tám nhóm kỹ năng số cốt lõi được rèn luyện qua toàn bộ hành trình học tập."
         />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2">
-          {SKILLS.map(([name, desc, level, use]) => (
-            <div
-              key={name as string}
-              className="reveal rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] transition-all hover:-translate-y-1"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="font-display text-lg font-bold text-foreground">{name}</h3>
-                <span className="shrink-0 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-bold text-primary">
-                  {level}%
-                </span>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
-              <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-secondary">
-                <div
-                  className="h-full rounded-full"
-                  style={{ width: `${level}%`, background: "var(--gradient-primary)" }}
-                />
-              </div>
-              <p className="mt-3 text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">Ứng dụng thực tế: </span>
-                {use}
-              </p>
-            </div>
-          ))}
+
+        <div className="mt-14 grid items-center gap-10 lg:grid-cols-[1fr_auto_1fr]">
+          {/* Cột trái: 01,03,05,07 */}
+          <div className="order-2 space-y-8 lg:order-1">
+            {[0, 2, 4, 6].map((i) => (
+              <SkillRow key={i} skill={SKILLS[i]} align="left" />
+            ))}
+          </div>
+
+          {/* Vòng tròn trung tâm */}
+          <div className="reveal order-1 lg:order-2">
+            <SkillDonut />
+          </div>
+
+          {/* Cột phải: 02,04,06,08 */}
+          <div className="order-3 space-y-8">
+            {[1, 3, 5, 7].map((i) => (
+              <SkillRow key={i} skill={SKILLS[i]} align="right" />
+            ))}
+          </div>
+        </div>
+
+        {/* Thanh tổng kết */}
+        <div className="reveal mx-auto mt-14 flex max-w-3xl flex-wrap items-center justify-center gap-x-4 gap-y-3 rounded-full border border-border bg-card px-6 py-4 shadow-[var(--shadow-soft)]">
+          <span className="flex items-center gap-2 text-sm font-semibold text-foreground">
+            <Target className="size-5 text-brand-pink-strong" /> 8 kỹ năng cốt lõi
+          </span>
+          <ChevronRight className="size-4 text-muted-foreground" />
+          <span className="flex items-center gap-2 text-sm font-semibold text-foreground">
+            <Brain className="size-5 text-primary" /> Rèn luyện toàn diện
+          </span>
+          <ChevronRight className="size-4 text-muted-foreground" />
+          <span className="flex items-center gap-2 text-sm font-semibold text-foreground">
+            <Rocket className="size-5 text-brand-blue-strong" /> Sẵn sàng cho tương lai
+          </span>
         </div>
       </section>
 
