@@ -219,11 +219,9 @@ const PROJECTS: Project[] = [
     tools: ["Google Scholar", "ScienceDirect", "VNU-Lic (ĐHQGHN)", "World Bank", "OECD"],
     tags: ["Tăng trưởng xanh", "Đánh giá nguồn Scopus", "Kinh tế bền vững"],
     evidence: "Bảng tổng hợp 10 tài liệu và đánh giá độ tin cậy theo tiêu chí.",
-    evidenceCaptions: [
-      "Ảnh kết quả tìm kiếm trên Google Scholar / ScienceDirect",
-      "Bảng tổng hợp 10 tài liệu và điểm độ tin cậy (1–5)",
-      "Danh mục tài liệu tham khảo trích dẫn theo chuẩn",
-    ],
+    evidenceImages: EVIDENCE_2,
+    fileUrl: baocao2Pdf.url,
+    fileName: "BaoCao_DuAn2.pdf",
     integrity: {
       usage: [
         "Dùng AI để gợi ý từ khóa và diễn đạt truy vấn tìm kiếm học thuật.",
