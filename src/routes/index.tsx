@@ -507,6 +507,11 @@ const PROJECTS: Project[] = [
     tools: ["Tài liệu học thuật", "Quy định nhà trường", "Nguồn tham khảo chính thống"],
     tags: ["Đạo đức AI", "Liêm chính học thuật", "Tư duy phản biện"],
     evidence: "Ảnh bộ nguyên tắc sử dụng AI cá nhân và ghi chú phân tích đạo đức.",
+    evidenceCaptions: [
+      "Bộ nguyên tắc sử dụng AI cá nhân đã xây dựng",
+      "Ghi chú phân tích các tình huống đạo đức AI",
+      "Bảng cam kết sử dụng AI có trách nhiệm",
+    ],
     integrity: {
       usage: [
         "Nghiên cứu chính sách và tình huống đạo đức khi ứng dụng AI trong học thuật.",
