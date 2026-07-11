@@ -449,6 +449,11 @@ const PROJECTS: Project[] = [
     tools: ["ChatGPT", "Canva", "CapCut", "Gemini", "DALL·E"],
     tags: ["AI tạo sinh", "Quy trình sản xuất", "Biên tập cá nhân"],
     evidence: "Video ngắn (< 5 phút), infographic hoặc ảnh minh họa sản phẩm AI.",
+    evidenceCaptions: [
+      "Infographic tóm tắt \u201cAI in University Learning\u201d (bản đọc)",
+      "Prompt DALL·E & phản hồi ChatGPT cho hình minh họa",
+      "Infographic đầy đủ: lợi ích, thách thức & sử dụng AI có trách nhiệm",
+    ],
     integrity: {
       usage: [
         "Dùng AI tạo sinh để hỗ trợ ý tưởng, hình ảnh và bản nháp nội dung.",
