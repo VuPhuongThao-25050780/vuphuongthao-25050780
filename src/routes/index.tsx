@@ -957,6 +957,78 @@ function TaskCell({
   );
 }
 
+function EvidenceGallery({
+  images,
+  portrait,
+  taskIndex,
+}: {
+  images: string[];
+  portrait?: boolean;
+  taskIndex: number;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const MAX = 5;
+  const showToggle = images.length > MAX;
+  const visible = expanded || !showToggle ? images : images.slice(0, MAX);
+  const hiddenCount = images.length - MAX;
+  const imgClass = portrait
+    ? "aspect-[3/4] object-contain"
+    : "aspect-video object-cover";
+
+  return (
+    <div
+      className={`mt-4 grid gap-3 ${
+        portrait
+          ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+          : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+      }`}
+    >
+      {visible.map((src, i) => (
+        <a
+          key={i}
+          href={src}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group overflow-hidden rounded-xl border border-border bg-white shadow-sm transition hover:shadow-md"
+        >
+          <img
+            src={src}
+            alt={`Minh chứng bài tập ${taskIndex} - ảnh ${i + 1}`}
+            loading="lazy"
+            className={`w-full transition group-hover:scale-105 ${imgClass}`}
+          />
+        </a>
+      ))}
+      {showToggle && !expanded && (
+        <button
+          type="button"
+          onClick={() => setExpanded(true)}
+          className="group relative overflow-hidden rounded-xl border border-border shadow-sm transition hover:shadow-md"
+        >
+          <img
+            src={images[MAX]}
+            alt={`Xem thêm ${hiddenCount} ảnh`}
+            loading="lazy"
+            className={`w-full ${imgClass}`}
+          />
+          <span className="absolute inset-0 grid place-items-center bg-foreground/60 font-display text-lg font-extrabold text-white transition group-hover:bg-foreground/70">
+            +{hiddenCount}
+          </span>
+        </button>
+      )}
+      {showToggle && expanded && (
+        <button
+          type="button"
+          onClick={() => setExpanded(false)}
+          className={`grid place-items-center rounded-xl border border-dashed border-border bg-muted/40 px-2 text-center text-xs font-semibold text-muted-foreground transition hover:bg-muted ${imgClass}`}
+        >
+          Thu gọn
+        </button>
+      )}
+    </div>
+  );
+}
+
 /* ============================================================
  *  TRANG CHÍNH
  * ============================================================ */
